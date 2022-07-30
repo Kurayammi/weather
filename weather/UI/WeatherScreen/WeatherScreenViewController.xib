@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherScreenViewController" customModule="weather" customModuleProvider="target">
             <connections>
+                <outlet property="dayInfoImageVIew" destination="nMM-MS-so6" id="v3J-76-5Eu"/>
+                <outlet property="dayInfoTitleLabel" destination="VPd-vQ-Mgy" id="QEp-Qx-ib2"/>
+                <outlet property="dayInfoViewConteiner" destination="4I8-ju-Tyl" id="f27-HJ-PQn"/>
                 <outlet property="hoursInfoStackView" destination="DeJ-B5-h7C" id="Uz8-jd-m6O"/>
                 <outlet property="navigationView" destination="C9g-J2-LHx" id="kta-bc-oCr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -48,10 +51,112 @@
                                     </constraints>
                                 </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUd-7R-6Af" userLabel="InfoView">
-                                    <rect key="frame" x="200" y="75" width="214" height="150"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <rect key="frame" x="200" y="120" width="214" height="60"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGt-jG-OZ2" userLabel="TempView">
+                                            <rect key="frame" x="0.0" y="0.0" width="214" height="20"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_temp" translatesAutoresizingMaskIntoConstraints="NO" id="bVP-0M-HB5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="DCc-zc-f1l"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Zx-VT-3ps" userLabel="TempLabel">
+                                                    <rect key="frame" x="30" y="-0.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="bVP-0M-HB5" firstAttribute="top" secondItem="vGt-jG-OZ2" secondAttribute="top" id="5bQ-Ag-5rG"/>
+                                                <constraint firstItem="5Zx-VT-3ps" firstAttribute="leading" secondItem="bVP-0M-HB5" secondAttribute="trailing" constant="10" id="EeF-G9-b6s"/>
+                                                <constraint firstAttribute="height" constant="20" id="FZn-fq-ycy"/>
+                                                <constraint firstAttribute="bottom" secondItem="bVP-0M-HB5" secondAttribute="bottom" id="IEr-cR-gEu"/>
+                                                <constraint firstItem="bVP-0M-HB5" firstAttribute="leading" secondItem="vGt-jG-OZ2" secondAttribute="leading" id="bui-kA-cRB"/>
+                                                <constraint firstItem="5Zx-VT-3ps" firstAttribute="centerY" secondItem="vGt-jG-OZ2" secondAttribute="centerY" id="lVQ-Yb-gcI"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujD-1h-17U" userLabel="HumidityView">
+                                            <rect key="frame" x="0.0" y="20" width="214" height="20"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_humidity" translatesAutoresizingMaskIntoConstraints="NO" id="ZJd-LS-h7I">
+                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="pLF-qH-v26"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVf-B5-898" userLabel="HumidityLabel">
+                                                    <rect key="frame" x="30" y="-0.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="ZJd-LS-h7I" firstAttribute="leading" secondItem="ujD-1h-17U" secondAttribute="leading" id="7qv-GW-NDl"/>
+                                                <constraint firstAttribute="height" constant="20" id="Ab1-cI-oSr"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZJd-LS-h7I" secondAttribute="bottom" id="SON-ZO-686"/>
+                                                <constraint firstItem="VVf-B5-898" firstAttribute="centerY" secondItem="ujD-1h-17U" secondAttribute="centerY" id="cKh-nO-oEo"/>
+                                                <constraint firstItem="VVf-B5-898" firstAttribute="leading" secondItem="ZJd-LS-h7I" secondAttribute="trailing" constant="10" id="r9q-OS-EEq"/>
+                                                <constraint firstItem="ZJd-LS-h7I" firstAttribute="top" secondItem="ujD-1h-17U" secondAttribute="top" id="wiv-SS-LdU"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="liV-9i-WyK" userLabel="HumidityView">
+                                            <rect key="frame" x="0.0" y="40" width="214" height="20"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_wind" translatesAutoresizingMaskIntoConstraints="NO" id="zbi-5w-jYi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="LoA-I0-G8a"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofc-pR-fOL" userLabel="WindLabel">
+                                                    <rect key="frame" x="30" y="-0.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_wind_e" translatesAutoresizingMaskIntoConstraints="NO" id="wEF-jp-ss5" userLabel="WindOrientationImageView">
+                                                    <rect key="frame" x="82" y="0.0" width="20" height="20"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="AuF-D0-508"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="ofc-pR-fOL" firstAttribute="leading" secondItem="zbi-5w-jYi" secondAttribute="trailing" constant="10" id="1ki-Gv-KMD"/>
+                                                <constraint firstItem="wEF-jp-ss5" firstAttribute="leading" secondItem="ofc-pR-fOL" secondAttribute="trailing" constant="10" id="2Kc-oc-tVf"/>
+                                                <constraint firstAttribute="bottom" secondItem="wEF-jp-ss5" secondAttribute="bottom" id="Afk-xa-Isl"/>
+                                                <constraint firstItem="zbi-5w-jYi" firstAttribute="leading" secondItem="liV-9i-WyK" secondAttribute="leading" id="P3b-vR-Dks"/>
+                                                <constraint firstAttribute="height" constant="20" id="m6r-AW-W1y"/>
+                                                <constraint firstItem="zbi-5w-jYi" firstAttribute="top" secondItem="liV-9i-WyK" secondAttribute="top" id="qC0-3F-gEH"/>
+                                                <constraint firstAttribute="bottom" secondItem="zbi-5w-jYi" secondAttribute="bottom" id="r2K-u6-ti1"/>
+                                                <constraint firstItem="wEF-jp-ss5" firstAttribute="top" secondItem="liV-9i-WyK" secondAttribute="top" id="wpr-cf-tRd"/>
+                                                <constraint firstItem="ofc-pR-fOL" firstAttribute="centerY" secondItem="liV-9i-WyK" secondAttribute="centerY" id="ze4-tk-1tP"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="150" id="hI4-x4-k1J"/>
+                                        <constraint firstItem="liV-9i-WyK" firstAttribute="top" secondItem="ujD-1h-17U" secondAttribute="bottom" id="0w3-zX-Trw"/>
+                                        <constraint firstAttribute="trailing" secondItem="liV-9i-WyK" secondAttribute="trailing" id="49U-X0-uaN"/>
+                                        <constraint firstAttribute="trailing" secondItem="ujD-1h-17U" secondAttribute="trailing" id="6Bb-00-cBl"/>
+                                        <constraint firstItem="vGt-jG-OZ2" firstAttribute="top" secondItem="JUd-7R-6Af" secondAttribute="top" id="EWG-53-vpj"/>
+                                        <constraint firstItem="vGt-jG-OZ2" firstAttribute="leading" secondItem="JUd-7R-6Af" secondAttribute="leading" id="IDN-ug-B6a"/>
+                                        <constraint firstItem="ujD-1h-17U" firstAttribute="top" secondItem="vGt-jG-OZ2" secondAttribute="bottom" id="JXG-du-vIc"/>
+                                        <constraint firstAttribute="trailing" secondItem="vGt-jG-OZ2" secondAttribute="trailing" id="ROe-aw-eIb"/>
+                                        <constraint firstItem="ujD-1h-17U" firstAttribute="leading" secondItem="JUd-7R-6Af" secondAttribute="leading" id="Z8u-e5-fyn"/>
+                                        <constraint firstAttribute="height" constant="60" id="hI4-x4-k1J"/>
+                                        <constraint firstItem="liV-9i-WyK" firstAttribute="leading" secondItem="JUd-7R-6Af" secondAttribute="leading" id="sfh-db-dqo"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -110,6 +215,10 @@
         </view>
     </objects>
     <resources>
+        <image name="ic_humidity" width="16" height="20"/>
+        <image name="ic_temp" width="10" height="20"/>
+        <image name="ic_wind" width="17" height="19"/>
+        <image name="icon_wind_e" width="34" height="34"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
