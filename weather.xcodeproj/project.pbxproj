@@ -14,13 +14,15 @@
 		40185C152896B08300750D06 /* WeatherScreenNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40185C142896B08300750D06 /* WeatherScreenNetworkService.swift */; };
 		40185C172897EB1300750D06 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40185C162897EB1300750D06 /* LocationManager.swift */; };
 		40185C1A2898057A00750D06 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40185C192898057A00750D06 /* Helpers.swift */; };
+		40185C1F28986D2500750D06 /* HourItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40185C1D28986D2500750D06 /* HourItemCollectionViewCell.swift */; };
+		40185C2028986D2500750D06 /* HourItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40185C1E28986D2500750D06 /* HourItemCollectionViewCell.xib */; };
+		40185C222898768400750D06 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40185C212898768400750D06 /* Constans.swift */; };
 		4076069A289565DF00F4A9EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40760699289565DF00F4A9EB /* AppDelegate.swift */; };
 		4076069C289565DF00F4A9EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4076069B289565DF00F4A9EB /* SceneDelegate.swift */; };
 		407606A3289565E500F4A9EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 407606A2289565E500F4A9EB /* Assets.xcassets */; };
 		407606A6289565E500F4A9EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407606A4289565E500F4A9EB /* LaunchScreen.storyboard */; };
 		407606B128956F7200F4A9EB /* WeatherScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407606AF28956F7200F4A9EB /* WeatherScreenViewController.swift */; };
 		407606B228956F7200F4A9EB /* WeatherScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 407606B028956F7200F4A9EB /* WeatherScreenViewController.xib */; };
-		407606B72895739100F4A9EB /* HourItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407606B62895739100F4A9EB /* HourItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,9 @@
 		40185C142896B08300750D06 /* WeatherScreenNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherScreenNetworkService.swift; sourceTree = "<group>"; };
 		40185C162897EB1300750D06 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		40185C192898057A00750D06 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		40185C1D28986D2500750D06 /* HourItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		40185C1E28986D2500750D06 /* HourItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		40185C212898768400750D06 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		40760696289565DF00F4A9EB /* weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40760699289565DF00F4A9EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4076069B289565DF00F4A9EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,7 +44,6 @@
 		407606A7289565E500F4A9EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		407606AF28956F7200F4A9EB /* WeatherScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherScreenViewController.swift; sourceTree = "<group>"; };
 		407606B028956F7200F4A9EB /* WeatherScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherScreenViewController.xib; sourceTree = "<group>"; };
-		407606B62895739100F4A9EB /* HourItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				40185C192898057A00750D06 /* Helpers.swift */,
+				40185C212898768400750D06 /* Constans.swift */,
 			);
 			path = "Helpers+Extentions";
 			sourceTree = "<group>";
@@ -124,9 +129,10 @@
 		407606B52895733500F4A9EB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				407606B62895739100F4A9EB /* HourItemView.swift */,
 				40185C0B2895B35F00750D06 /* WeekInfoItemTableViewCell.swift */,
 				40185C0C2895B35F00750D06 /* WeekInfoItemTableViewCell.xib */,
+				40185C1D28986D2500750D06 /* HourItemCollectionViewCell.swift */,
+				40185C1E28986D2500750D06 /* HourItemCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +199,7 @@
 				407606A3289565E500F4A9EB /* Assets.xcassets in Resources */,
 				407606B228956F7200F4A9EB /* WeatherScreenViewController.xib in Resources */,
 				40185C0E2895B35F00750D06 /* WeekInfoItemTableViewCell.xib in Resources */,
+				40185C2028986D2500750D06 /* HourItemCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,9 +212,10 @@
 			files = (
 				40185C112896AD6F00750D06 /* NetworkManager.swift in Sources */,
 				4076069A289565DF00F4A9EB /* AppDelegate.swift in Sources */,
-				407606B72895739100F4A9EB /* HourItemView.swift in Sources */,
 				4076069C289565DF00F4A9EB /* SceneDelegate.swift in Sources */,
 				40185C0D2895B35F00750D06 /* WeekInfoItemTableViewCell.swift in Sources */,
+				40185C1F28986D2500750D06 /* HourItemCollectionViewCell.swift in Sources */,
+				40185C222898768400750D06 /* Constans.swift in Sources */,
 				40185C1A2898057A00750D06 /* Helpers.swift in Sources */,
 				40185C152896B08300750D06 /* WeatherScreenNetworkService.swift in Sources */,
 				407606B128956F7200F4A9EB /* WeatherScreenViewController.swift in Sources */,

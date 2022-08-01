@@ -17,6 +17,7 @@
                 <outlet property="dayInfoTitleLabel" destination="VPd-vQ-Mgy" id="QEp-Qx-ib2"/>
                 <outlet property="dayInfoWindOrientationImage" destination="wEF-jp-ss5" id="JtG-mk-SyU"/>
                 <outlet property="dayInfoWindTitleLabel" destination="ofc-pR-fOL" id="gmL-YP-0t8"/>
+                <outlet property="hourInfoCollectionView" destination="yzn-P9-W3z" id="mP4-wg-U3x"/>
                 <outlet property="navigationTitleView" destination="4yh-fx-wLT" id="wnu-am-zjm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="weekInfoTableView" destination="gKZ-8I-SFh" id="nCe-E7-vNQ"/>
@@ -212,28 +213,19 @@
                                 <constraint firstAttribute="height" constant="300" id="z8W-Ae-qfh"/>
                             </constraints>
                         </view>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VkE-lt-PI3">
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yzn-P9-W3z" userLabel="HourInfoCollectionView">
                             <rect key="frame" x="0.0" y="340" width="414" height="150"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAD-lh-xwh" userLabel="ContentView">
-                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="150"/>
-                                    <color key="backgroundColor" name="subColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="1000" id="Qaa-9h-N2N"/>
-                                    </constraints>
-                                </view>
-                            </subviews>
-                            <color key="backgroundColor" name="subColor"/>
-                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="RAD-lh-xwh" firstAttribute="leading" secondItem="VkE-lt-PI3" secondAttribute="leading" id="9vf-Sc-n4c"/>
-                                <constraint firstAttribute="height" constant="150" id="As5-GJ-SBY"/>
-                                <constraint firstItem="RAD-lh-xwh" firstAttribute="top" secondItem="VkE-lt-PI3" secondAttribute="top" id="DKJ-YX-2m4"/>
-                                <constraint firstItem="RAD-lh-xwh" firstAttribute="centerY" secondItem="VkE-lt-PI3" secondAttribute="centerY" id="GDC-Ou-ZsT"/>
-                                <constraint firstAttribute="trailing" secondItem="RAD-lh-xwh" secondAttribute="trailing" id="IH6-KC-9aG"/>
-                                <constraint firstAttribute="bottom" secondItem="RAD-lh-xwh" secondAttribute="bottom" id="uSH-Lv-7bZ"/>
+                                <constraint firstAttribute="height" constant="150" id="kL6-Fe-Bk0"/>
                             </constraints>
-                        </scrollView>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="6TC-gv-Gw1">
+                                <size key="itemSize" width="50" height="150"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gKZ-8I-SFh" userLabel="WeekInfoTableView">
                             <rect key="frame" x="0.0" y="490" width="414" height="362"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -241,19 +233,19 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="VkE-lt-PI3" firstAttribute="leading" secondItem="eqR-kK-Ikc" secondAttribute="leading" id="8AZ-3B-vX0"/>
-                        <constraint firstItem="gKZ-8I-SFh" firstAttribute="top" secondItem="VkE-lt-PI3" secondAttribute="bottom" id="Bry-dD-CaV"/>
+                        <constraint firstItem="yzn-P9-W3z" firstAttribute="top" secondItem="4I8-ju-Tyl" secondAttribute="bottom" id="Bo5-ce-cQQ"/>
                         <constraint firstItem="C9g-J2-LHx" firstAttribute="leading" secondItem="eqR-kK-Ikc" secondAttribute="leading" id="Clg-l7-Hrk"/>
-                        <constraint firstAttribute="trailing" secondItem="VkE-lt-PI3" secondAttribute="trailing" id="Yew-nW-6x0"/>
+                        <constraint firstItem="gKZ-8I-SFh" firstAttribute="leading" secondItem="eqR-kK-Ikc" secondAttribute="leading" id="MVA-wI-ejN"/>
                         <constraint firstAttribute="trailing" secondItem="C9g-J2-LHx" secondAttribute="trailing" id="aRG-vZ-Nth"/>
-                        <constraint firstItem="gKZ-8I-SFh" firstAttribute="leading" secondItem="eqR-kK-Ikc" secondAttribute="leading" id="bfU-rM-jVe"/>
+                        <constraint firstAttribute="trailing" secondItem="yzn-P9-W3z" secondAttribute="trailing" id="cz5-Qw-6FP"/>
                         <constraint firstItem="C9g-J2-LHx" firstAttribute="top" secondItem="eqR-kK-Ikc" secondAttribute="top" id="fgV-BB-jYq"/>
-                        <constraint firstItem="VkE-lt-PI3" firstAttribute="top" secondItem="4I8-ju-Tyl" secondAttribute="bottom" id="frk-Ls-vb0"/>
+                        <constraint firstAttribute="bottom" secondItem="gKZ-8I-SFh" secondAttribute="bottom" id="g2l-4G-38L"/>
                         <constraint firstAttribute="trailing" secondItem="4I8-ju-Tyl" secondAttribute="trailing" id="hpH-wW-HVD"/>
-                        <constraint firstAttribute="trailing" secondItem="gKZ-8I-SFh" secondAttribute="trailing" id="qI9-fR-VNj"/>
-                        <constraint firstAttribute="bottom" secondItem="gKZ-8I-SFh" secondAttribute="bottom" id="sHy-We-FXB"/>
+                        <constraint firstItem="yzn-P9-W3z" firstAttribute="leading" secondItem="eqR-kK-Ikc" secondAttribute="leading" id="nsX-3U-Rol"/>
+                        <constraint firstItem="gKZ-8I-SFh" firstAttribute="top" secondItem="yzn-P9-W3z" secondAttribute="bottom" id="oc5-gp-FUh"/>
                         <constraint firstItem="4I8-ju-Tyl" firstAttribute="top" secondItem="C9g-J2-LHx" secondAttribute="bottom" id="sZx-SJ-dbv"/>
                         <constraint firstItem="4I8-ju-Tyl" firstAttribute="leading" secondItem="eqR-kK-Ikc" secondAttribute="leading" id="tQ4-It-v0U"/>
+                        <constraint firstAttribute="trailing" secondItem="gKZ-8I-SFh" secondAttribute="trailing" id="xSZ-95-zT6"/>
                     </constraints>
                 </view>
             </subviews>
@@ -277,9 +269,6 @@
         <image name="icon_wind_e" width="34" height="34"/>
         <namedColor name="mainColor">
             <color red="0.29019607843137257" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="subColor">
-            <color red="0.35294117647058826" green="0.62352941176470589" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

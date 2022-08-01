@@ -10,9 +10,7 @@ import UIKit
 class WeatherScreenViewController: UIViewController {
     
     //MARK: IBOutlet
-    
     @IBOutlet private var navigationTitleView: UILabel!
-    
     /// DayInfoView
     @IBOutlet private var dayInfoTitleLabel: UILabel!
     @IBOutlet private var dayInfoImageVIew: UIImageView!
@@ -20,7 +18,8 @@ class WeatherScreenViewController: UIViewController {
     @IBOutlet private var dayInfoHumidityTitleLabel: UILabel!
     @IBOutlet private var dayInfoWindTitleLabel: UILabel!
     @IBOutlet private var dayInfoWindOrientationImage: UIImageView!
-    
+    /// HourInfoView
+    @IBOutlet private var hourInfoCollectionView: UICollectionView!
     /// WeekInfoView
     @IBOutlet var weekInfoTableView: UITableView!
     
@@ -40,10 +39,13 @@ class WeatherScreenViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
+    //MARK: Setup UI
     private func setupUI() {
         
+        navigationTitleView.text = viewModel.currentCity
         dayInfoImageVIew.image = UIImage(named: "ic_white_day_bright")
         dayInfoImageVIew.tintColor = .white
+        setupHourInfoView()
         setupDayInfoView()
         setupWeekInfoTableView()
     }
@@ -59,7 +61,10 @@ class WeatherScreenViewController: UIViewController {
     }
     
     private func setupHourInfoView() {
-        
+        hourInfoCollectionView.delegate = self
+        hourInfoCollectionView.dataSource = self
+        hourInfoCollectionView.register(UINib(nibName: "HourItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HourItemCollectionViewCell")
+        hourInfoCollectionView.reloadData()
     }
     
     private func setupWeekInfoTableView() {
@@ -69,6 +74,7 @@ class WeatherScreenViewController: UIViewController {
         weekInfoTableView.reloadData()
     }
     
+    //MARK: Setup Callbacks
     private func setupCallBacks() {
         viewModel.updateUI = {
             DispatchQueue.main.async {
@@ -97,4 +103,22 @@ extension WeatherScreenViewController: UITableViewDelegate, UITableViewDataSourc
         viewModel.weekModel.count
     }
     
+}
+
+//MARK: CollectionView Extentions
+extension WeatherScreenViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourItemCollectionViewCell", for: indexPath) as! HourItemCollectionViewCell
+        
+        return cell;
+    }
 }

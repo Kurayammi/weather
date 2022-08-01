@@ -23,7 +23,6 @@ struct periodResponseModel: Codable {
     let weatherPrimaryCoded: String
 }
 
-
 struct GetWeatherResponseModel: Codable {
     let interval: String
     let periods: [periodResponseModel]
@@ -34,12 +33,9 @@ struct ResponceModel: Codable {
     let response: [GetWeatherResponseModel]
 }
 
-struct APIDetails {
-    static let Scheme = "https"
-    static let Host = "api.aerisapi.com"
-    static let DataPath = "/forecasts"
-    static let Id = "149dvzv6ZZMgyJ5G6BZDZ"
-    static let Secret = "2K2jqrdL6ih0o1JRh5bts1UExy3XAcSGMr45nRes"
+enum Interval {
+    case week
+    case day
 }
 
 final class WeatherScreenNetworkService {
@@ -47,7 +43,9 @@ final class WeatherScreenNetworkService {
     private let networkManager = NetworkManager()
     var didGetResponce: ((_ responce: [periodResponseModel]) -> Void)?
     
-    private func createURLFromParameters(lat: Double, lon: Double) -> URL {
+    private func createURLFromParameters(lat: Double,
+                                         lon: Double,
+                                         _ for: Interval) -> URL {
         
         let coords = "/\(lat),\(lon)"
         var components = URLComponents()
@@ -68,8 +66,16 @@ final class WeatherScreenNetworkService {
         return components.url!
     }
     
-    func sendRequest(lat: Double, lon: Double) {
-        let url = createURLFromParameters(lat: lat, lon: lon)
+    func sendDayInfoByHoursRequest(lat: Double, lon: Double) {
+        let url = createURLFromParameters(lat: lat,
+                                          lon: lon,
+                                          .day)
+    }
+    
+    func sendWeekInfoRequest(lat: Double, lon: Double) {
+        let url = createURLFromParameters(lat: lat,
+                                          lon: lon,
+                                          .week)
         
         networkManager.dataRequest(with: url, objectType: ResponceModel.self) { result in
             switch result {

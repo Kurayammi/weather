@@ -14,11 +14,18 @@ final class WeatherScreenViewModel {
     var weekModel: [periodResponseModel] = []
     var dayModel: periodResponseModel?
     var hoursModel: [periodResponseModel] = []
+    
+    var currentCity: String {
+        get{
+            return locationManager.currentCityName ?? ""
+        }
+    }
+    
     var updateUI: (() -> Void)?
     
     func didLoad() {
         locationManager.requestLocation()
-        locationManager.didGetLocation = networkService.sendRequest
+        locationManager.didGetLocation = networkService.sendWeekInfoRequest
         networkService.didGetResponce = didGetResponce
     }
     

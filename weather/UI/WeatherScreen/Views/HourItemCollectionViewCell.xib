@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HourItemCollectionViewCell" customModule="weather" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="150"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" id="eW4-3V-L3d" userLabel="ConteinerView">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="150"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z64-JH-XOg">
+                                <rect key="frame" x="0.0" y="10" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="subColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Z64-JH-XOg" secondAttribute="trailing" id="Jpo-ky-XSb"/>
+                            <constraint firstItem="Z64-JH-XOg" firstAttribute="leading" secondItem="eW4-3V-L3d" secondAttribute="leading" id="Ty5-wt-q7K"/>
+                            <constraint firstItem="Z64-JH-XOg" firstAttribute="top" secondItem="eW4-3V-L3d" secondAttribute="top" constant="10" id="g3S-D0-O70"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="eW4-3V-L3d" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="68v-V0-yxm"/>
+                <constraint firstAttribute="bottom" secondItem="eW4-3V-L3d" secondAttribute="bottom" id="cDO-Yb-JpY"/>
+                <constraint firstItem="eW4-3V-L3d" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eMx-jh-Hyb"/>
+                <constraint firstAttribute="trailing" secondItem="eW4-3V-L3d" secondAttribute="trailing" id="nKl-0J-BTT"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="45.535714285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="subColor">
+            <color red="0.35294117647058826" green="0.62352941176470589" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

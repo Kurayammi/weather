@@ -14,9 +14,9 @@
             filePath = "weather/UI/WeatherScreen/WeatherScreenNetworkService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "sendRequest(lat:lon:)"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "sendWeekInfoRequest(lat:lon:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -30,8 +30,8 @@
             filePath = "weather/UI/WeatherScreen/WeatherScreenViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "didGetResponce(responce:)"
             landmarkType = "7">
          </BreakpointContent>
