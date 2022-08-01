@@ -11,10 +11,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherScreenViewController" customModule="weather" customModuleProvider="target">
             <connections>
+                <outlet property="dayInfoHumidityTitleLabel" destination="VVf-B5-898" id="HPQ-gk-oag"/>
                 <outlet property="dayInfoImageVIew" destination="nMM-MS-so6" id="v3J-76-5Eu"/>
+                <outlet property="dayInfoTempTitleLabel" destination="5Zx-VT-3ps" id="zWl-Iz-vjb"/>
                 <outlet property="dayInfoTitleLabel" destination="VPd-vQ-Mgy" id="QEp-Qx-ib2"/>
-                <outlet property="dayInfoViewConteiner" destination="4I8-ju-Tyl" id="f27-HJ-PQn"/>
-                <outlet property="navigationView" destination="C9g-J2-LHx" id="kta-bc-oCr"/>
+                <outlet property="dayInfoWindOrientationImage" destination="wEF-jp-ss5" id="JtG-mk-SyU"/>
+                <outlet property="dayInfoWindTitleLabel" destination="ofc-pR-fOL" id="gmL-YP-0t8"/>
+                <outlet property="navigationTitleView" destination="4yh-fx-wLT" id="wnu-am-zjm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="weekInfoTableView" destination="gKZ-8I-SFh" id="nCe-E7-vNQ"/>
             </connections>
@@ -55,7 +58,7 @@
                                     <buttonConfiguration key="configuration" style="plain" image="ic_my_location"/>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemPinkColor"/>
+                            <color key="backgroundColor" name="mainColor"/>
                             <constraints>
                                 <constraint firstItem="4yh-fx-wLT" firstAttribute="top" secondItem="C9g-J2-LHx" secondAttribute="top" id="Bvn-dT-5dM"/>
                                 <constraint firstAttribute="height" constant="40" id="Nts-Ab-EEo"/>
@@ -143,7 +146,7 @@
                                                 <constraint firstItem="ZJd-LS-h7I" firstAttribute="top" secondItem="ujD-1h-17U" secondAttribute="top" id="wiv-SS-LdU"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="liV-9i-WyK" userLabel="HumidityView">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="liV-9i-WyK" userLabel="WindView">
                                             <rect key="frame" x="0.0" y="40" width="214" height="20"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_wind" translatesAutoresizingMaskIntoConstraints="NO" id="zbi-5w-jYi">
@@ -196,7 +199,7 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <color key="backgroundColor" name="mainColor"/>
                             <constraints>
                                 <constraint firstItem="VPd-vQ-Mgy" firstAttribute="top" secondItem="4I8-ju-Tyl" secondAttribute="top" constant="5" id="7zD-7I-qOV"/>
                                 <constraint firstAttribute="trailing" secondItem="JUd-7R-6Af" secondAttribute="trailing" id="FOu-ad-BnX"/>
@@ -214,12 +217,14 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAD-lh-xwh" userLabel="ContentView">
                                     <rect key="frame" x="0.0" y="0.0" width="1000" height="150"/>
-                                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                    <color key="backgroundColor" name="subColor"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="1000" id="Qaa-9h-N2N"/>
                                     </constraints>
                                 </view>
                             </subviews>
+                            <color key="backgroundColor" name="subColor"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="RAD-lh-xwh" firstAttribute="leading" secondItem="VkE-lt-PI3" secondAttribute="leading" id="9vf-Sc-n4c"/>
                                 <constraint firstAttribute="height" constant="150" id="As5-GJ-SBY"/>
@@ -273,14 +278,11 @@
         <namedColor name="mainColor">
             <color red="0.29019607843137257" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="subColor">
+            <color red="0.35294117647058826" green="0.62352941176470589" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
