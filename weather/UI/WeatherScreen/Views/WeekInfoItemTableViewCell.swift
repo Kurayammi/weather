@@ -24,10 +24,9 @@ class WeekInfoItemTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setup(day: String, temp: String, weatherIconName: String) {
-        dayLabel.text = day
+    func setup(day: Int, temp: String, weatherIconName: String) {
+        dayLabel.text = Helpers.dateFormatter(time: day, format: "E")
         tempLabel.text = temp
         weatherIcon.image = UIImage(named: weatherIconName)
     }
-    
 }

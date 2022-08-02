@@ -14,25 +14,9 @@
             filePath = "weather/UI/WeatherScreen/WeatherScreenNetworkService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "sendWeekInfoRequest(lat:lon:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "185DF346-6155-4C0D-A327-A01CEE00D70D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "weather/UI/WeatherScreen/WeatherScreenViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "didGetResponce(responce:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

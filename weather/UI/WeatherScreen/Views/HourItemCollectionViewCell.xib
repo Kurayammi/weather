@@ -20,8 +20,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="50" height="150"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z64-JH-XOg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z64-JH-XOg" userLabel="TimeLabel">
                                 <rect key="frame" x="0.0" y="10" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tfM-6a-2rr" userLabel="ImageView">
+                                <rect key="frame" x="15" y="65" width="20" height="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="tga-rz-LVW"/>
+                                    <constraint firstAttribute="width" constant="20" id="xCt-it-J6o"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ts0-cx-Gnf" userLabel="TempLabel">
+                                <rect key="frame" x="0.0" y="119" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -30,8 +44,13 @@
                         <color key="backgroundColor" name="subColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Z64-JH-XOg" secondAttribute="trailing" id="Jpo-ky-XSb"/>
+                            <constraint firstAttribute="trailing" secondItem="ts0-cx-Gnf" secondAttribute="trailing" id="NRK-Zm-FWj"/>
+                            <constraint firstItem="ts0-cx-Gnf" firstAttribute="leading" secondItem="eW4-3V-L3d" secondAttribute="leading" id="PvR-7A-8yW"/>
                             <constraint firstItem="Z64-JH-XOg" firstAttribute="leading" secondItem="eW4-3V-L3d" secondAttribute="leading" id="Ty5-wt-q7K"/>
+                            <constraint firstAttribute="bottom" secondItem="ts0-cx-Gnf" secondAttribute="bottom" constant="10" id="WYM-sw-UuE"/>
+                            <constraint firstItem="tfM-6a-2rr" firstAttribute="centerY" secondItem="eW4-3V-L3d" secondAttribute="centerY" id="bbL-fZ-ZtH"/>
                             <constraint firstItem="Z64-JH-XOg" firstAttribute="top" secondItem="eW4-3V-L3d" secondAttribute="top" constant="10" id="g3S-D0-O70"/>
+                            <constraint firstItem="tfM-6a-2rr" firstAttribute="centerX" secondItem="eW4-3V-L3d" secondAttribute="centerX" id="owb-hh-gF5"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -42,6 +61,11 @@
                 <constraint firstItem="eW4-3V-L3d" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eMx-jh-Hyb"/>
                 <constraint firstAttribute="trailing" secondItem="eW4-3V-L3d" secondAttribute="trailing" id="nKl-0J-BTT"/>
             </constraints>
+            <connections>
+                <outlet property="imageView" destination="tfM-6a-2rr" id="9Qw-rF-OQk"/>
+                <outlet property="tempLabel" destination="ts0-cx-Gnf" id="5dv-mf-ADC"/>
+                <outlet property="timeLabel" destination="Z64-JH-XOg" id="o8Q-tI-3gx"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="45.535714285714285"/>
         </collectionViewCell>
     </objects>

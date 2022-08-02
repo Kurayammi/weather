@@ -22,16 +22,36 @@ final class WeatherScreenViewModel {
     }
     
     var updateUI: (() -> Void)?
+    var updateUIAfterSelectDay: (() -> Void)?
     
     func didLoad() {
         locationManager.requestLocation()
-        locationManager.didGetLocation = networkService.sendWeekInfoRequest
-        networkService.didGetResponce = didGetResponce
+        locationManager.didGetLocation = { lat, lon in
+            self.networkService.sendWeekInfoRequest(lat: lat, lon: lon)
+            self.networkService.sendDayInfoByHoursRequest(lat: lat, lon: lon)
+        }
+        
+        networkService.didGetWeekResponce = didGetWeekResponce
+        networkService.didGetHourResponce = didGetHourResponce
     }
     
-    private func didGetResponce(responce: [periodResponseModel]) {
+    func onDayTap(index: Int) {
+        guard let lat = locationManager.location?.latitude else {return}
+        guard let lon = locationManager.location?.longitude else {return}
+        let from = weekModel[index].timestamp.toString()
+        networkService.sendDayInfoByHoursRequest(lat: lat,
+                                                 lon: lon,
+                                                 from: from)
+    }
+    
+    private func didGetWeekResponce(responce: [periodResponseModel]) {
         self.weekModel = responce
-        self.dayModel = responce.first
         updateUI?()
+    }
+    
+    private func didGetHourResponce(responce: [periodResponseModel]) {
+        self.hoursModel = responce
+        self.dayModel = responce.first
+        updateUIAfterSelectDay?()
     }
 }

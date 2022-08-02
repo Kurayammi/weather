@@ -81,6 +81,13 @@ class WeatherScreenViewController: UIViewController {
                 self.setupUI()
             }
         }
+        
+        viewModel.updateUIAfterSelectDay = {
+            DispatchQueue.main.async {
+                self.setupDayInfoView()
+                self.setupHourInfoView()
+            }
+        }
     }
 }
 
@@ -90,8 +97,9 @@ extension WeatherScreenViewController: UITableViewDelegate, UITableViewDataSourc
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "WeekInfoItemTableViewCell") as? WeekInfoItemTableViewCell {
             
-            cell.setup(day: "Mn\(indexPath.row)",
-                       temp: "\(viewModel.weekModel[indexPath.row].maxTempC)",
+            cell.setup(
+                day: viewModel.weekModel[indexPath.row].timestamp,
+                temp: "\(viewModel.weekModel[indexPath.row].maxTempC)",
                        weatherIconName: "ic_white_day_cloudy")
             return cell
         }
@@ -103,6 +111,9 @@ extension WeatherScreenViewController: UITableViewDelegate, UITableViewDataSourc
         viewModel.weekModel.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.onDayTap(index: indexPath.row)
+    }
 }
 
 //MARK: CollectionView Extentions
@@ -113,12 +124,17 @@ extension WeatherScreenViewController: UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        viewModel.hoursModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourItemCollectionViewCell", for: indexPath) as! HourItemCollectionViewCell
-        
-        return cell;
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourItemCollectionViewCell", for: indexPath) as? HourItemCollectionViewCell {
+            cell.setup(time: viewModel.hoursModel[indexPath.row].timestamp,
+                       imageName: "ic_white_day_cloudy",
+                       temp: viewModel.hoursModel[indexPath.row].maxTempC.toString())
+            
+            return cell
+        }
+        return UICollectionViewCell()
     }
 }
