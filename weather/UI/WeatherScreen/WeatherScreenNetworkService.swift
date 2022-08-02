@@ -7,12 +7,6 @@
 
 import Foundation
 
-struct GetCityResponseModel: Codable {
-    let name: String
-    let lat: Double
-    let lon: Double
-}
-
 struct periodResponseModel: Codable {
     let timestamp: Int
     let maxTempC: Int
@@ -23,14 +17,14 @@ struct periodResponseModel: Codable {
     let weatherPrimaryCoded: String
 }
 
-struct GetWeatherResponseModel: Codable {
+struct WeatherResponseModel: Codable {
     let interval: String
     let periods: [periodResponseModel]
 }
 
-struct ResponceModel: Codable {
+struct GetWeatherResponseModel: Codable {
     let success: Bool
-    let response: [GetWeatherResponseModel]
+    let response: [WeatherResponseModel]
 }
 
 enum Interval {
@@ -54,7 +48,7 @@ final class WeatherScreenNetworkService {
         
         components.scheme = APIDetails.Scheme
         components.host   = APIDetails.Host
-        components.path   = APIDetails.DataPath + coords
+        components.path   = APIDetails.GetWeatherDataPath + coords
         components.queryItems = [URLQueryItem]()
         
         ///create parametrs and filters
@@ -88,7 +82,7 @@ final class WeatherScreenNetworkService {
                                           from: from,
                                           .day)
         networkManager.dataRequest(with: url,
-                                   objectType: ResponceModel.self) { result in
+                                   objectType: GetWeatherResponseModel.self) { result in
             switch result {
             case.success(let response):
                 let data = response.response[0].periods
@@ -104,7 +98,7 @@ final class WeatherScreenNetworkService {
                                           lon: lon,
                                           .week)
         
-        networkManager.dataRequest(with: url, objectType: ResponceModel.self) { result in
+        networkManager.dataRequest(with: url, objectType: GetWeatherResponseModel.self) { result in
             switch result {
             case .success(let response):
                 print(response.response[0].periods.count)

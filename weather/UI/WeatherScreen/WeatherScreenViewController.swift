@@ -23,7 +23,18 @@ class WeatherScreenViewController: UIViewController {
     /// WeekInfoView
     @IBOutlet var weekInfoTableView: UITableView!
     
+    //MARK: @IBAction
+    @IBAction func mapButtonAction(_ sender: Any) {
+        coordinator?.pushMapScreen(currentLocation: viewModel.didEnd())
+    }
+    
     private let viewModel = WeatherScreenViewModel()
+    private var coordinator: MainCoordinator?
+    
+    func start(coordinator: MainCoordinator) {
+        self.coordinator = coordinator
+        
+    }
     
     //MARK: LifeCycle
     override func viewDidLoad() {

@@ -17,6 +17,11 @@
 		40185C1F28986D2500750D06 /* HourItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40185C1D28986D2500750D06 /* HourItemCollectionViewCell.swift */; };
 		40185C2028986D2500750D06 /* HourItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40185C1E28986D2500750D06 /* HourItemCollectionViewCell.xib */; };
 		40185C222898768400750D06 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40185C212898768400750D06 /* Constans.swift */; };
+		406FD8502899732900588EBF /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406FD84E2899732900588EBF /* MapScreenViewController.swift */; };
+		406FD8512899732900588EBF /* MapScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 406FD84F2899732900588EBF /* MapScreenViewController.xib */; };
+		406FD8532899750600588EBF /* MapScreenVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406FD8522899750600588EBF /* MapScreenVIewModel.swift */; };
+		406FD855289977E800588EBF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406FD854289977E800588EBF /* MainCoordinator.swift */; };
+		406FD85728999DE800588EBF /* MapScreenNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406FD85628999DE800588EBF /* MapScreenNetworkService.swift */; };
 		4076069A289565DF00F4A9EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40760699289565DF00F4A9EB /* AppDelegate.swift */; };
 		4076069C289565DF00F4A9EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4076069B289565DF00F4A9EB /* SceneDelegate.swift */; };
 		407606A3289565E500F4A9EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 407606A2289565E500F4A9EB /* Assets.xcassets */; };
@@ -36,6 +41,11 @@
 		40185C1D28986D2500750D06 /* HourItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		40185C1E28986D2500750D06 /* HourItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		40185C212898768400750D06 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
+		406FD84E2899732900588EBF /* MapScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
+		406FD84F2899732900588EBF /* MapScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapScreenViewController.xib; sourceTree = "<group>"; };
+		406FD8522899750600588EBF /* MapScreenVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenVIewModel.swift; sourceTree = "<group>"; };
+		406FD854289977E800588EBF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		406FD85628999DE800588EBF /* MapScreenNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenNetworkService.swift; sourceTree = "<group>"; };
 		40760696289565DF00F4A9EB /* weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40760699289565DF00F4A9EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4076069B289565DF00F4A9EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +85,17 @@
 			path = "Helpers+Extentions";
 			sourceTree = "<group>";
 		};
+		406FD84D289972FF00588EBF /* MapScreen */ = {
+			isa = PBXGroup;
+			children = (
+				406FD84E2899732900588EBF /* MapScreenViewController.swift */,
+				406FD84F2899732900588EBF /* MapScreenViewController.xib */,
+				406FD8522899750600588EBF /* MapScreenVIewModel.swift */,
+				406FD85628999DE800588EBF /* MapScreenNetworkService.swift */,
+			);
+			path = MapScreen;
+			sourceTree = "<group>";
+		};
 		4076068D289565DF00F4A9EB = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +115,7 @@
 		40760698289565DF00F4A9EB /* weather */ = {
 			isa = PBXGroup;
 			children = (
+				406FD854289977E800588EBF /* MainCoordinator.swift */,
 				40185C182898056000750D06 /* Helpers+Extentions */,
 				40185C0F2896AD5700750D06 /* Managers */,
 				407606B32895731300F4A9EB /* UI */,
@@ -109,6 +131,7 @@
 		407606B32895731300F4A9EB /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				406FD84D289972FF00588EBF /* MapScreen */,
 				407606B42895731D00F4A9EB /* WeatherScreen */,
 			);
 			path = UI;
@@ -200,6 +223,7 @@
 				407606B228956F7200F4A9EB /* WeatherScreenViewController.xib in Resources */,
 				40185C0E2895B35F00750D06 /* WeekInfoItemTableViewCell.xib in Resources */,
 				40185C2028986D2500750D06 /* HourItemCollectionViewCell.xib in Resources */,
+				406FD8512899732900588EBF /* MapScreenViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,15 +235,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				40185C112896AD6F00750D06 /* NetworkManager.swift in Sources */,
+				406FD855289977E800588EBF /* MainCoordinator.swift in Sources */,
 				4076069A289565DF00F4A9EB /* AppDelegate.swift in Sources */,
 				4076069C289565DF00F4A9EB /* SceneDelegate.swift in Sources */,
 				40185C0D2895B35F00750D06 /* WeekInfoItemTableViewCell.swift in Sources */,
 				40185C1F28986D2500750D06 /* HourItemCollectionViewCell.swift in Sources */,
+				406FD8502899732900588EBF /* MapScreenViewController.swift in Sources */,
 				40185C222898768400750D06 /* Constans.swift in Sources */,
 				40185C1A2898057A00750D06 /* Helpers.swift in Sources */,
 				40185C152896B08300750D06 /* WeatherScreenNetworkService.swift in Sources */,
 				407606B128956F7200F4A9EB /* WeatherScreenViewController.swift in Sources */,
 				40185C132896B01D00750D06 /* WeatherScreenViewModel.swift in Sources */,
+				406FD8532899750600588EBF /* MapScreenVIewModel.swift in Sources */,
+				406FD85728999DE800588EBF /* MapScreenNetworkService.swift in Sources */,
 				40185C172897EB1300750D06 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

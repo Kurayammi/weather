@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FA3FC6DD-940A-4601-A840-B205E848A72A"
+            uuid = "AC85A202-C61F-4BD6-8DAE-BC5E3B006DBD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "weather/UI/WeatherScreen/WeatherScreenNetworkService.swift"
+            filePath = "weather/Helpers+Extentions/MainCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "sendWeekInfoRequest(lat:lon:)"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "pushMapScreen(currentLocation:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

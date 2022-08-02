@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapScreenViewController" customModule="weather" customModuleProvider="target">
+            <connections>
+                <outlet property="mapView" destination="rPL-EG-XdA" id="V8g-By-o9T"/>
+                <outlet property="textField" destination="ckJ-Ql-dzI" id="7cc-QY-aaR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bvv-Bw-0jM" userLabel="ConteinerView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9a-Dc-e0a" userLabel="NavigationView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OgA-8S-DiY" userLabel="BackButton">
+                                    <rect key="frame" x="2" y="0.0" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="HUJ-kQ-t7S"/>
+                                    </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="ic_back"/>
+                                    <connections>
+                                        <action selector="backButtonAction:" destination="-1" eventType="touchUpInside" id="M0T-fm-cTu"/>
+                                    </connections>
+                                </button>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ckJ-Ql-dzI" userLabel="TextField">
+                                    <rect key="frame" x="82" y="3" width="250" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="250" id="LhT-iL-lHS"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MF5-Kp-cjK" userLabel="SearchButton">
+                                    <rect key="frame" x="372" y="0.0" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="yJf-yQ-v35"/>
+                                    </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="ic_search"/>
+                                    <connections>
+                                        <action selector="searchButtonAction:" destination="-1" eventType="touchUpInside" id="mob-HS-vsc"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" name="mainColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="2y5-d8-OTK"/>
+                                <constraint firstAttribute="bottom" secondItem="OgA-8S-DiY" secondAttribute="bottom" id="6iA-4Y-m22"/>
+                                <constraint firstItem="MF5-Kp-cjK" firstAttribute="top" secondItem="l9a-Dc-e0a" secondAttribute="top" id="706-PU-k4G"/>
+                                <constraint firstItem="ckJ-Ql-dzI" firstAttribute="centerY" secondItem="l9a-Dc-e0a" secondAttribute="centerY" id="Igd-ez-ujZ"/>
+                                <constraint firstItem="ckJ-Ql-dzI" firstAttribute="centerX" secondItem="l9a-Dc-e0a" secondAttribute="centerX" id="Ttf-x2-Fd6"/>
+                                <constraint firstItem="OgA-8S-DiY" firstAttribute="leading" secondItem="l9a-Dc-e0a" secondAttribute="leading" constant="2" id="qdk-CG-jmS"/>
+                                <constraint firstAttribute="trailing" secondItem="MF5-Kp-cjK" secondAttribute="trailing" constant="2" id="wKm-uI-4hK"/>
+                                <constraint firstAttribute="bottom" secondItem="MF5-Kp-cjK" secondAttribute="bottom" id="yuS-Hg-eEm"/>
+                                <constraint firstItem="OgA-8S-DiY" firstAttribute="top" secondItem="l9a-Dc-e0a" secondAttribute="top" id="zhp-Tt-Vnt"/>
+                            </constraints>
+                        </view>
+                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rPL-EG-XdA">
+                            <rect key="frame" x="0.0" y="40" width="414" height="812"/>
+                        </mapView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="rPL-EG-XdA" firstAttribute="leading" secondItem="bvv-Bw-0jM" secondAttribute="leading" id="FfC-GI-1Di"/>
+                        <constraint firstAttribute="bottom" secondItem="rPL-EG-XdA" secondAttribute="bottom" id="Fse-aS-BeQ"/>
+                        <constraint firstAttribute="trailing" secondItem="rPL-EG-XdA" secondAttribute="trailing" id="Kl5-JQ-uez"/>
+                        <constraint firstItem="rPL-EG-XdA" firstAttribute="top" secondItem="l9a-Dc-e0a" secondAttribute="bottom" id="ZFe-Gj-hfL"/>
+                        <constraint firstItem="l9a-Dc-e0a" firstAttribute="top" secondItem="bvv-Bw-0jM" secondAttribute="top" id="acc-qD-q2f"/>
+                        <constraint firstItem="l9a-Dc-e0a" firstAttribute="leading" secondItem="bvv-Bw-0jM" secondAttribute="leading" id="mQu-pG-PQH"/>
+                        <constraint firstAttribute="trailing" secondItem="l9a-Dc-e0a" secondAttribute="trailing" id="tfd-iE-dMN"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="mainColor"/>
+            <constraints>
+                <constraint firstItem="bvv-Bw-0jM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6Hg-q5-S7J"/>
+                <constraint firstItem="bvv-Bw-0jM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZP1-8d-NDf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bvv-Bw-0jM" secondAttribute="trailing" id="sUr-IE-2f3"/>
+                <constraint firstAttribute="bottom" secondItem="bvv-Bw-0jM" secondAttribute="bottom" id="umh-om-VjG"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="46"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_back" width="12" height="21"/>
+        <image name="ic_search" width="22" height="22"/>
+        <namedColor name="mainColor">
+            <color red="0.29019607843137257" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

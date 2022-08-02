@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 final class WeatherScreenViewModel {
     private let networkService = WeatherScreenNetworkService()
@@ -20,11 +21,11 @@ final class WeatherScreenViewModel {
             return locationManager.currentCityName ?? ""
         }
     }
-    
     var updateUI: (() -> Void)?
     var updateUIAfterSelectDay: (() -> Void)?
     
     func didLoad() {
+        
         locationManager.requestLocation()
         locationManager.didGetLocation = { lat, lon in
             self.networkService.sendWeekInfoRequest(lat: lat, lon: lon)
@@ -33,6 +34,10 @@ final class WeatherScreenViewModel {
         
         networkService.didGetWeekResponce = didGetWeekResponce
         networkService.didGetHourResponce = didGetHourResponce
+    }
+    
+    func didEnd() -> CLLocationCoordinate2D? {
+        return locationManager.location
     }
     
     func onDayTap(index: Int) {
