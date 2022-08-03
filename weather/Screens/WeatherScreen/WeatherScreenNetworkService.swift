@@ -15,6 +15,7 @@ struct periodResponseModel: Codable {
     let windDirMaxDEG: Double
     let windSpeedKPH: Double
     let weatherPrimaryCoded: String
+    let isDay: Bool
 }
 
 struct WeatherResponseModel: Codable {

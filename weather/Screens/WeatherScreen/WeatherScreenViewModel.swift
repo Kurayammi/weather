@@ -67,12 +67,12 @@ final class WeatherScreenViewModel {
         if self.currentCity == nil {
             self.currentCity = self.locationManager.currentCityName
         }
+        self.dayModel = responce.first
         updateUI?()
     }
     
     private func didGetHourResponce(responce: [periodResponseModel]) {
         self.hoursModel = responce
-        self.dayModel = responce.first
         updateUIAfterSelectDay?()
     }
 }

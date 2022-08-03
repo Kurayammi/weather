@@ -81,7 +81,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4I8-ju-Tyl" userLabel="DayInfoViewConteiner">
-                            <rect key="frame" x="0.0" y="40" width="414" height="300"/>
+                            <rect key="frame" x="0.0" y="40" width="414" height="250"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPd-vQ-Mgy" userLabel="Title">
                                     <rect key="frame" x="10" y="5" width="394" height="21"/>
@@ -90,17 +90,17 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nMM-MS-so6" userLabel="Image">
-                                    <rect key="frame" x="0.0" y="50" width="200" height="200"/>
+                                    <rect key="frame" x="50" y="50" width="150" height="150"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="200" id="GUp-sN-WxE"/>
-                                        <constraint firstAttribute="height" constant="200" id="NhV-gw-saM"/>
+                                        <constraint firstAttribute="width" constant="150" id="GUp-sN-WxE"/>
+                                        <constraint firstAttribute="height" constant="150" id="NhV-gw-saM"/>
                                     </constraints>
                                 </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUd-7R-6Af" userLabel="InfoView">
-                                    <rect key="frame" x="200" y="120" width="214" height="60"/>
+                                    <rect key="frame" x="220" y="85" width="194" height="80"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGt-jG-OZ2" userLabel="TempView">
-                                            <rect key="frame" x="0.0" y="0.0" width="214" height="20"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="194" height="20"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_temp" translatesAutoresizingMaskIntoConstraints="NO" id="bVP-0M-HB5">
                                                     <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -127,7 +127,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujD-1h-17U" userLabel="HumidityView">
-                                            <rect key="frame" x="0.0" y="20" width="214" height="20"/>
+                                            <rect key="frame" x="0.0" y="30" width="194" height="20"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_humidity" translatesAutoresizingMaskIntoConstraints="NO" id="ZJd-LS-h7I">
                                                     <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -154,7 +154,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="liV-9i-WyK" userLabel="WindView">
-                                            <rect key="frame" x="0.0" y="40" width="214" height="20"/>
+                                            <rect key="frame" x="0.0" y="60" width="194" height="20"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_wind" translatesAutoresizingMaskIntoConstraints="NO" id="zbi-5w-jYi">
                                                     <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -193,15 +193,15 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="liV-9i-WyK" firstAttribute="top" secondItem="ujD-1h-17U" secondAttribute="bottom" id="0w3-zX-Trw"/>
+                                        <constraint firstItem="liV-9i-WyK" firstAttribute="top" secondItem="ujD-1h-17U" secondAttribute="bottom" constant="10" id="0w3-zX-Trw"/>
                                         <constraint firstAttribute="trailing" secondItem="liV-9i-WyK" secondAttribute="trailing" id="49U-X0-uaN"/>
                                         <constraint firstAttribute="trailing" secondItem="ujD-1h-17U" secondAttribute="trailing" id="6Bb-00-cBl"/>
                                         <constraint firstItem="vGt-jG-OZ2" firstAttribute="top" secondItem="JUd-7R-6Af" secondAttribute="top" id="EWG-53-vpj"/>
                                         <constraint firstItem="vGt-jG-OZ2" firstAttribute="leading" secondItem="JUd-7R-6Af" secondAttribute="leading" id="IDN-ug-B6a"/>
-                                        <constraint firstItem="ujD-1h-17U" firstAttribute="top" secondItem="vGt-jG-OZ2" secondAttribute="bottom" id="JXG-du-vIc"/>
+                                        <constraint firstItem="ujD-1h-17U" firstAttribute="top" secondItem="vGt-jG-OZ2" secondAttribute="bottom" constant="10" id="JXG-du-vIc"/>
                                         <constraint firstAttribute="trailing" secondItem="vGt-jG-OZ2" secondAttribute="trailing" id="ROe-aw-eIb"/>
                                         <constraint firstItem="ujD-1h-17U" firstAttribute="leading" secondItem="JUd-7R-6Af" secondAttribute="leading" id="Z8u-e5-fyn"/>
-                                        <constraint firstAttribute="height" constant="60" id="hI4-x4-k1J"/>
+                                        <constraint firstAttribute="height" constant="80" id="hI4-x4-k1J"/>
                                         <constraint firstItem="liV-9i-WyK" firstAttribute="leading" secondItem="JUd-7R-6Af" secondAttribute="leading" id="sfh-db-dqo"/>
                                     </constraints>
                                 </view>
@@ -212,15 +212,15 @@
                                 <constraint firstAttribute="trailing" secondItem="JUd-7R-6Af" secondAttribute="trailing" id="FOu-ad-BnX"/>
                                 <constraint firstItem="nMM-MS-so6" firstAttribute="centerY" secondItem="4I8-ju-Tyl" secondAttribute="centerY" id="K1e-bA-mB1"/>
                                 <constraint firstAttribute="trailing" secondItem="VPd-vQ-Mgy" secondAttribute="trailing" constant="10" id="OBt-xz-Ahn"/>
-                                <constraint firstItem="nMM-MS-so6" firstAttribute="leading" secondItem="4I8-ju-Tyl" secondAttribute="leading" id="P8e-P0-8VS"/>
+                                <constraint firstItem="nMM-MS-so6" firstAttribute="leading" secondItem="4I8-ju-Tyl" secondAttribute="leading" constant="50" id="P8e-P0-8VS"/>
                                 <constraint firstItem="JUd-7R-6Af" firstAttribute="centerY" secondItem="4I8-ju-Tyl" secondAttribute="centerY" id="YTp-Ve-SK6"/>
                                 <constraint firstItem="VPd-vQ-Mgy" firstAttribute="leading" secondItem="4I8-ju-Tyl" secondAttribute="leading" constant="10" id="eLU-Kq-DXK"/>
-                                <constraint firstItem="JUd-7R-6Af" firstAttribute="leading" secondItem="nMM-MS-so6" secondAttribute="trailing" id="nWh-rc-Kjf"/>
-                                <constraint firstAttribute="height" constant="300" id="z8W-Ae-qfh"/>
+                                <constraint firstItem="JUd-7R-6Af" firstAttribute="leading" secondItem="nMM-MS-so6" secondAttribute="trailing" constant="20" id="nWh-rc-Kjf"/>
+                                <constraint firstAttribute="height" constant="250" id="z8W-Ae-qfh"/>
                             </constraints>
                         </view>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yzn-P9-W3z" userLabel="HourInfoCollectionView">
-                            <rect key="frame" x="0.0" y="340" width="414" height="150"/>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yzn-P9-W3z" userLabel="HourInfoCollectionView">
+                            <rect key="frame" x="0.0" y="290" width="414" height="150"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="150" id="kL6-Fe-Bk0"/>
@@ -232,8 +232,8 @@
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                         </collectionView>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gKZ-8I-SFh" userLabel="WeekInfoTableView">
-                            <rect key="frame" x="0.0" y="490" width="414" height="362"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gKZ-8I-SFh" userLabel="WeekInfoTableView">
+                            <rect key="frame" x="0.0" y="440" width="414" height="412"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                     </subviews>

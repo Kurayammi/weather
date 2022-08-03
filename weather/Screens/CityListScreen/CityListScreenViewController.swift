@@ -8,13 +8,13 @@
 import UIKit
 import CoreLocation
 
-class CityListScreenViewController: UIViewController {
+final class CityListScreenViewController: UIViewController {
     
     @IBOutlet private var textField: UITextField!
     @IBOutlet private var cityListTableView: UITableView!
     
     @IBAction private func navigationBackButtonAction(_ sender: Any) {
-       goBack()
+        goBack()
     }
     
     @IBAction private func navigationSearchButtonAction(_ sender: Any) {
@@ -78,9 +78,9 @@ extension CityListScreenViewController: UITableViewDelegate, UITableViewDataSour
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CityListTableViewCell") as? CityListTableViewCell {
             cell.setup(cityName: viewModel.searchedCities[indexPath.row])
-            
             return cell
         }
+        
         return UITableViewCell()
     }
     

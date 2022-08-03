@@ -59,7 +59,6 @@ class WeatherScreenViewController: UIViewController {
     private func setupUI() {
         
         navigationTitleView.text = viewModel.currentCity
-        dayInfoImageVIew.image = UIImage(named: "ic_white_day_bright")
         dayInfoImageVIew.tintColor = .white
         setupHourInfoView()
         setupDayInfoView()
@@ -68,11 +67,13 @@ class WeatherScreenViewController: UIViewController {
     
     private func setupDayInfoView() {
         guard let dayInfo = viewModel.dayModel else { return }
+        let imageName = Helpers.getImageNameFromWeatherCode(code: dayInfo.weatherPrimaryCoded, isDay: dayInfo.isDay)
+        dayInfoImageVIew.image = UIImage(named: imageName)
         
         dayInfoTitleLabel.text = Helpers.dateFormatter(time: dayInfo.timestamp, format: "E, d MMM")
-        dayInfoTempTitleLabel.text = dayInfo.maxTempC.toString() + "/" + dayInfo.minTempC.toString()
-        dayInfoHumidityTitleLabel.text = dayInfo.humidity.toString()
-        dayInfoWindTitleLabel.text = dayInfo.windSpeedKPH.toString()
+        dayInfoTempTitleLabel.text = dayInfo.maxTempC.toString() + "°/ " + dayInfo.minTempC.toString() + "°"
+        dayInfoHumidityTitleLabel.text = dayInfo.humidity.toString() + "%"
+        dayInfoWindTitleLabel.text = dayInfo.windSpeedKPH.toString() + " km/h"
         dayInfoWindOrientationImage.image = UIImage(named: Helpers.setupNameForWindImage(wind_deg: dayInfo.windDirMaxDEG))
     }
     
@@ -113,10 +114,15 @@ extension WeatherScreenViewController: UITableViewDelegate, UITableViewDataSourc
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "WeekInfoItemTableViewCell") as? WeekInfoItemTableViewCell {
             
+            let imageName = Helpers.getImageNameFromWeatherCode(
+                code: viewModel.weekModel[indexPath.row].weatherPrimaryCoded,
+                isDay: viewModel.weekModel[indexPath.row].isDay)
+            
             cell.setup(
                 day: viewModel.weekModel[indexPath.row].timestamp,
-                temp: "\(viewModel.weekModel[indexPath.row].maxTempC)",
-                       weatherIconName: "ic_white_day_cloudy")
+                maxTemp: viewModel.weekModel[indexPath.row].maxTempC,
+                minTemp: viewModel.weekModel[indexPath.row].minTempC,
+                weatherIconName: imageName)
             return cell
         }
         
@@ -145,8 +151,13 @@ extension WeatherScreenViewController: UICollectionViewDataSource, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourItemCollectionViewCell", for: indexPath) as? HourItemCollectionViewCell {
+            
+            let imageName = Helpers.getImageNameFromWeatherCode(
+                code: viewModel.hoursModel[indexPath.row].weatherPrimaryCoded,
+                isDay: viewModel.hoursModel[indexPath.row].isDay)
+            
             cell.setup(time: viewModel.hoursModel[indexPath.row].timestamp,
-                       imageName: "ic_white_day_cloudy",
+                       imageName: imageName,
                        temp: viewModel.hoursModel[indexPath.row].maxTempC.toString())
             
             return cell

@@ -29,7 +29,6 @@ final class Helpers {
             let date = Date(timeIntervalSince1970: timeInterval)
             
             let dateFormatterGet = DateFormatter()
-            //dateFormatterGet.dateFormat = "E, d MMM"
             dateFormatterGet.dateFormat = format
             
             return dateFormatterGet.string(from: date)
@@ -56,4 +55,36 @@ final class Helpers {
             return ""
         }
     
+    static func getImageNameFromWeatherCode(code: String, isDay: Bool) -> String {
+        let splitedCode = code.split(separator: ":")
+        let cloudCode = splitedCode.first
+        let weatherCode = splitedCode.last
+        
+        var time = ""
+        var coverage = ""
+        var weather = ""
+        if isDay {
+            time = "day"
+        } else {
+            time = "night"
+        }
+        
+        switch cloudCode {
+        case "CL": coverage = "bright"
+        default: coverage = "cloudy"
+        }
+        
+        switch weatherCode {
+        case "R", "RS": weather = "rain"
+        case "RW": weather = "shower"
+        case "T": weather = "thunder"
+        default: weather = ""
+        }
+        
+        if weather != "" {
+            return "ic_white_\(time)_\(weather)"
+        } else {
+            return "ic_white_\(time)_\(coverage)"
+        }
+    }
 }
