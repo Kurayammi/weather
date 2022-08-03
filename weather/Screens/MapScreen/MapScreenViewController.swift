@@ -15,7 +15,9 @@ class MapScreenViewController: UIViewController {
     
     //MARK: @IBAction
     @IBAction func backButtonAction(_ sender: Any) {
-        coordinator
+        coordinator?.pushWeatherScreen(
+            coords: viewModel?.currentLocation,
+            currentCiytName: viewModel?.inputText)
     }
     
     @IBAction func searchButtonAction(_ sender: Any) {

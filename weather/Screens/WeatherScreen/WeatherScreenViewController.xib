@@ -42,6 +42,9 @@
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="ic_place"/>
+                                    <connections>
+                                        <action selector="cityListButtonAction:" destination="-1" eventType="touchUpInside" id="NoK-7s-fkE"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yh-fx-wLT" userLabel="Title">
                                     <rect key="frame" x="52" y="0.0" width="45" height="40"/>

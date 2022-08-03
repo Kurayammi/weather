@@ -19,9 +19,24 @@ final class MainCoordinator {
         self.navigationController.pushViewController(vc, animated: true)
     }
     
-    func pushWeatherScreen(coords: CLLocationCoordinate2D) {
+    func pushWeatherScreen(coords: CLLocationCoordinate2D?,
+                           currentCiytName: String?) {
+        let model = WeatherScreenViewModel()
+        model.currentLocation = coords
+        model.currentCity = currentCiytName
         let vc = WeatherScreenViewController()
-        
+        vc.start(coordinator: self,
+                 viewModel: model)
+        self.navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func pushCityListScreen(location: CLLocationCoordinate2D?,
+                            currentCityName: String?) {
+        let vc = CityListScreenViewController()
+        vc.start(coordinator: self,
+                 currentLocation: location,
+                 currentCityName: currentCityName)
+        self.navigationController.pushViewController(vc, animated: true)
     }
     
     init(navigationController: UINavigationController) {

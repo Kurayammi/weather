@@ -27,13 +27,18 @@ class WeatherScreenViewController: UIViewController {
     @IBAction func mapButtonAction(_ sender: Any) {
         coordinator?.pushMapScreen(currentLocation: viewModel.didEnd())
     }
+    @IBAction func cityListButtonAction(_ sender: Any) {
+        coordinator?.pushCityListScreen(location: viewModel.didEnd(),
+                                        currentCityName: viewModel.currentCity)
+    }
     
-    private let viewModel = WeatherScreenViewModel()
+    private var viewModel = WeatherScreenViewModel()
     private var coordinator: MainCoordinator?
     
-    func start(coordinator: MainCoordinator) {
+    func start(coordinator: MainCoordinator,
+               viewModel: WeatherScreenViewModel) {
+        self.viewModel = viewModel
         self.coordinator = coordinator
-        
     }
     
     //MARK: LifeCycle

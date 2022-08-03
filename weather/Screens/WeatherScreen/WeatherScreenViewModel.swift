@@ -16,24 +16,27 @@ final class WeatherScreenViewModel {
     var dayModel: periodResponseModel?
     var hoursModel: [periodResponseModel] = []
     
-    var currentCity: String {
-        get{
-            return locationManager.currentCityName ?? ""
-        }
-    }
+    var currentLocation: CLLocationCoordinate2D?
+    var currentCity: String?
+    
     var updateUI: (() -> Void)?
     var updateUIAfterSelectDay: (() -> Void)?
     
     func didLoad() {
+        setupCallBacks()
         
-        locationManager.requestLocation()
-        locationManager.didGetLocation = { lat, lon in
-            self.networkService.sendWeekInfoRequest(lat: lat, lon: lon)
-            self.networkService.sendDayInfoByHoursRequest(lat: lat, lon: lon)
+        if currentLocation == nil {
+            locationManager.requestLocation()
+        } else {
+            guard let currentLocation = currentLocation else {return}
+            networkService.sendWeekInfoRequest(
+                lat: currentLocation.latitude,
+                lon: currentLocation.longitude)
+            
+            networkService.sendDayInfoByHoursRequest(
+                lat: currentLocation.latitude,
+                lon: currentLocation.longitude)
         }
-        
-        networkService.didGetWeekResponce = didGetWeekResponce
-        networkService.didGetHourResponce = didGetHourResponce
     }
     
     func didEnd() -> CLLocationCoordinate2D? {
@@ -49,8 +52,21 @@ final class WeatherScreenViewModel {
                                                  from: from)
     }
     
+    private func setupCallBacks() {
+        locationManager.didGetLocation = { lat, lon in
+            self.networkService.sendWeekInfoRequest(lat: lat, lon: lon)
+            self.networkService.sendDayInfoByHoursRequest(lat: lat, lon: lon)
+        }
+        
+        networkService.didGetWeekResponce = didGetWeekResponce
+        networkService.didGetHourResponce = didGetHourResponce
+    }
+    
     private func didGetWeekResponce(responce: [periodResponseModel]) {
         self.weekModel = responce
+        if self.currentCity == nil {
+            self.currentCity = self.locationManager.currentCityName
+        }
         updateUI?()
     }
     
