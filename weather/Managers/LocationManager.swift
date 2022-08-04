@@ -5,12 +5,9 @@
 //  Created by Kito on 8/1/22.
 //
 
-import Foundation
 import CoreLocation
-import Combine
 
-
-class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+final class LocationManager: NSObject {
     
     private let locationManager = CLLocationManager()
     
@@ -26,19 +23,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     func requestLocation() {
         checkLocationAuthorization()
-    }
-    
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Error is ", error)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first?.coordinate {
-            self.location = location
-            self.getPlace()
-            self.didGetLocation?(location.latitude, location.longitude)
-        }
     }
     
     private func checkLocationAuthorization() {
@@ -61,10 +45,10 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
     }
     
-    private func getPlace() {
+    private func getPlace(location: CLLocation?) {
         
         let geocoder = CLGeocoder()
-        guard let location =  locationManager.location else { return }
+        guard let location =  location else { return }
         geocoder.reverseGeocodeLocation(location) { placemarks, error in
             
             guard error == nil else {
@@ -79,5 +63,24 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             
             self.currentCityName = placemark.locality
         }
+    }
+}
+extension LocationManager: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error is ", error)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first?.coordinate {
+
+            self.location = location
+            self.getPlace(location: locations.first)
+            self.didGetLocation?(location.latitude, location.longitude)
+        }
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        locationManager.requestLocation()
     }
 }

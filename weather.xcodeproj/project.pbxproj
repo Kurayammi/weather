@@ -35,6 +35,8 @@
 		407606A6289565E500F4A9EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407606A4289565E500F4A9EB /* LaunchScreen.storyboard */; };
 		407606B128956F7200F4A9EB /* WeatherScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407606AF28956F7200F4A9EB /* WeatherScreenViewController.swift */; };
 		407606B228956F7200F4A9EB /* WeatherScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 407606B028956F7200F4A9EB /* WeatherScreenViewController.xib */; };
+		40C34474289BCC4C005D6DD3 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C34473289BCC4C005D6DD3 /* LoaderView.swift */; };
+		40C34476289BCCD6005D6DD3 /* LoaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C34475289BCCD6005D6DD3 /* LoaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		407606A7289565E500F4A9EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		407606AF28956F7200F4A9EB /* WeatherScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherScreenViewController.swift; sourceTree = "<group>"; };
 		407606B028956F7200F4A9EB /* WeatherScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherScreenViewController.xib; sourceTree = "<group>"; };
+		40C34473289BCC4C005D6DD3 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		40C34475289BCCD6005D6DD3 /* LoaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +205,8 @@
 				40185C0C2895B35F00750D06 /* WeekInfoItemTableViewCell.xib */,
 				40185C1D28986D2500750D06 /* HourItemCollectionViewCell.swift */,
 				40185C1E28986D2500750D06 /* HourItemCollectionViewCell.xib */,
+				40C34473289BCC4C005D6DD3 /* LoaderView.swift */,
+				40C34475289BCCD6005D6DD3 /* LoaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -268,6 +274,7 @@
 				407606A3289565E500F4A9EB /* Assets.xcassets in Resources */,
 				407606B228956F7200F4A9EB /* WeatherScreenViewController.xib in Resources */,
 				406FD863289ABA5F00588EBF /* cities.json in Resources */,
+				40C34476289BCCD6005D6DD3 /* LoaderView.xib in Resources */,
 				40185C0E2895B35F00750D06 /* WeekInfoItemTableViewCell.xib in Resources */,
 				40185C2028986D2500750D06 /* HourItemCollectionViewCell.xib in Resources */,
 				406FD8512899732900588EBF /* MapScreenViewController.xib in Resources */,
@@ -299,6 +306,7 @@
 				40185C132896B01D00750D06 /* WeatherScreenViewModel.swift in Sources */,
 				406FD8532899750600588EBF /* MapScreenVIewModel.swift in Sources */,
 				406FD86B289AC2AA00588EBF /* CityListTableViewCell.swift in Sources */,
+				40C34474289BCC4C005D6DD3 /* LoaderView.swift in Sources */,
 				406FD85728999DE800588EBF /* MapScreenNetworkService.swift in Sources */,
 				40185C172897EB1300750D06 /* LocationManager.swift in Sources */,
 			);

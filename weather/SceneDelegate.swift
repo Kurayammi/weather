@@ -20,15 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-        let viewModel = WeatherScreenViewModel()
-        let vc = WeatherScreenViewController()
-        let navigationController = UINavigationController(rootViewController: vc)
+        let coordinator = MainCoordinator()
+        coordinator.start()
         
-        let coordinator = MainCoordinator(navigationController: navigationController)
-        vc.start(coordinator: coordinator,
-                 viewModel: viewModel)
-        
-        window.rootViewController = navigationController
+        window.rootViewController = coordinator.navigationController
         
         window.makeKeyAndVisible()
         self.window = window

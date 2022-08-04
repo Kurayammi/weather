@@ -46,12 +46,13 @@ final class CityListScreenViewController: UIViewController {
         cityListTableView.reloadData()
         
         textField.delegate = self
+        textField.text = "Search"
     }
     
     private func goBack() {
         coordinator?.pushWeatherScreen(
-            coords: viewModel.currentLocation,
-            currentCiytName: viewModel.currentCityName)
+            location: viewModel.currentLocation,
+            currentCityName: viewModel.currentCityName)
     }
     
     private func setupCallBacks() {

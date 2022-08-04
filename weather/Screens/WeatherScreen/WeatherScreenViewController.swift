@@ -6,8 +6,8 @@
 //
 
 import UIKit
-
-class WeatherScreenViewController: UIViewController {
+import CoreLocation
+final class WeatherScreenViewController: UIViewController {
     
     //MARK: IBOutlet
     @IBOutlet private var navigationTitleView: UILabel!
@@ -29,16 +29,19 @@ class WeatherScreenViewController: UIViewController {
     }
     @IBAction func cityListButtonAction(_ sender: Any) {
         coordinator?.pushCityListScreen(location: viewModel.didEnd(),
-                                        currentCityName: viewModel.currentCity)
+                                        currentCityName: viewModel.currentCityName)
     }
     
-    private var viewModel = WeatherScreenViewModel()
+    private let viewModel = WeatherScreenViewModel()
     private var coordinator: MainCoordinator?
+    private var loaderView = LoaderView()
     
     func start(coordinator: MainCoordinator,
-               viewModel: WeatherScreenViewModel) {
-        self.viewModel = viewModel
+               currentLocation: CLLocationCoordinate2D?,
+               currentCityName: String?) {
         self.coordinator = coordinator
+        self.viewModel.currentLocation = currentLocation
+        self.viewModel.currentCityName = currentCityName
     }
     
     //MARK: LifeCycle
@@ -48,6 +51,7 @@ class WeatherScreenViewController: UIViewController {
         setupCallBacks()
         viewModel.didLoad()
         setupUI()
+        setupLoader()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,11 +62,20 @@ class WeatherScreenViewController: UIViewController {
     //MARK: Setup UI
     private func setupUI() {
         
-        navigationTitleView.text = viewModel.currentCity
+        navigationTitleView.text = viewModel.currentCityName
         dayInfoImageVIew.tintColor = .white
         setupHourInfoView()
         setupDayInfoView()
         setupWeekInfoTableView()
+    }
+    
+    private func setupLoader() {
+        loaderView.frame = CGRect(x: 0,
+                                  y: 0,
+                                  width: self.view.frame.width,
+                                  height: self.view.frame.height)
+        
+        self.view.addSubview(loaderView)
     }
     
     private func setupDayInfoView() {
@@ -96,6 +109,7 @@ class WeatherScreenViewController: UIViewController {
         viewModel.updateUI = {
             DispatchQueue.main.async {
                 self.setupUI()
+                self.loaderView.isHidden = true
             }
         }
         

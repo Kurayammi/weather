@@ -71,7 +71,7 @@ final class WeatherScreenNetworkService {
                                      secretItem]
         }
         
-        print(components.url ?? "sss")
+        print(components.url ?? "error")
         return components.url!
     }
     
@@ -102,7 +102,6 @@ final class WeatherScreenNetworkService {
         networkManager.dataRequest(with: url, objectType: GetWeatherResponseModel.self) { result in
             switch result {
             case .success(let response):
-                print(response.response[0].periods.count)
                 let data = response.response[0].periods
                 self.didGetWeekResponce?(data)
                 
