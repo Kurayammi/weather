@@ -79,11 +79,11 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="rPL-EG-XdA" firstAttribute="leading" secondItem="bvv-Bw-0jM" secondAttribute="leading" id="FfC-GI-1Di"/>
                         <constraint firstAttribute="bottom" secondItem="rPL-EG-XdA" secondAttribute="bottom" id="Fse-aS-BeQ"/>
-                        <constraint firstAttribute="trailing" secondItem="rPL-EG-XdA" secondAttribute="trailing" id="Kl5-JQ-uez"/>
+                        <constraint firstItem="rPL-EG-XdA" firstAttribute="leading" secondItem="bvv-Bw-0jM" secondAttribute="leading" id="Wg4-Xb-KqF"/>
                         <constraint firstItem="rPL-EG-XdA" firstAttribute="top" secondItem="l9a-Dc-e0a" secondAttribute="bottom" id="ZFe-Gj-hfL"/>
                         <constraint firstItem="l9a-Dc-e0a" firstAttribute="top" secondItem="bvv-Bw-0jM" secondAttribute="top" id="acc-qD-q2f"/>
+                        <constraint firstAttribute="trailing" secondItem="rPL-EG-XdA" secondAttribute="trailing" id="ltt-tP-yRz"/>
                         <constraint firstItem="l9a-Dc-e0a" firstAttribute="leading" secondItem="bvv-Bw-0jM" secondAttribute="leading" id="mQu-pG-PQH"/>
                         <constraint firstAttribute="trailing" secondItem="l9a-Dc-e0a" secondAttribute="trailing" id="tfd-iE-dMN"/>
                     </constraints>
@@ -93,8 +93,8 @@
             <color key="backgroundColor" name="mainColor"/>
             <constraints>
                 <constraint firstItem="bvv-Bw-0jM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6Hg-q5-S7J"/>
-                <constraint firstItem="bvv-Bw-0jM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZP1-8d-NDf"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bvv-Bw-0jM" secondAttribute="trailing" id="sUr-IE-2f3"/>
+                <constraint firstItem="bvv-Bw-0jM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6ki-F5-4A8"/>
+                <constraint firstAttribute="trailing" secondItem="bvv-Bw-0jM" secondAttribute="trailing" id="EeO-Hn-SYI"/>
                 <constraint firstAttribute="bottom" secondItem="bvv-Bw-0jM" secondAttribute="bottom" id="umh-om-VjG"/>
             </constraints>
             <point key="canvasLocation" x="139" y="46"/>
