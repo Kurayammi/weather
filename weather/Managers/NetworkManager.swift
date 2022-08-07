@@ -37,21 +37,18 @@ final class NetworkManager {
                 completion(Result.failure(AppError.networkError(error!)))
                 return
             }
-            
             guard let data = data else {
                 completion(Result.failure(AppError.dataNotFound))
                 return
             }
-            
             do {
                 //create decodable object from data
                 let decodedObject = try JSONDecoder().decode(objectType.self, from: data)
                 completion(Result.success(decodedObject))
             } catch let error {
-                completion(Result.failure(AppError.jsonParsingError(error as! DecodingError)))
+                completion(Result.failure(AppError.jsonParsingError(error)))
             }
         })
-        
         task.resume()
     }
 }

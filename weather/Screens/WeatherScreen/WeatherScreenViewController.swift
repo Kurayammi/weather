@@ -88,7 +88,7 @@ final class WeatherScreenViewController: UIViewController {
         dayInfoTempTitleLabel.text = dayInfo.maxTempC.toString() + "°/ " + dayInfo.minTempC.toString() + "°"
         dayInfoHumidityTitleLabel.text = dayInfo.humidity.toString() + "%"
         dayInfoWindTitleLabel.text = dayInfo.windSpeedKPH.toString() + " km/h"
-        dayInfoWindOrientationImage.image = UIImage(named: Helpers.setupNameForWindImage(wind_deg: dayInfo.windDirMaxDEG))
+        dayInfoWindOrientationImage.image = UIImage(named: Helpers.setupNameForWindImage(windDeg: dayInfo.windDirMaxDEG))
     }
     
     private func setupHourInfoView() {

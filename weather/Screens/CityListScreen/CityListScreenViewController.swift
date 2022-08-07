@@ -9,10 +9,10 @@ import UIKit
 import CoreLocation
 
 final class CityListScreenViewController: UIViewController {
-    
+    //MARK: IBOutlet
     @IBOutlet private var textField: UITextField!
     @IBOutlet private var cityListTableView: UITableView!
-    
+    //MARK: @IBAction
     @IBAction private func navigationBackButtonAction(_ sender: Any) {
         goBack()
     }
@@ -24,7 +24,7 @@ final class CityListScreenViewController: UIViewController {
     
     private let viewModel = CityListViewModel()
     private weak var coordinator: MainCoordinator?
-    
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -71,7 +71,7 @@ final class CityListScreenViewController: UIViewController {
         }
     }
 }
-
+//MARK: TableView Extentions
 extension CityListScreenViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.searchedCities?.response.count ?? 0
@@ -80,8 +80,8 @@ extension CityListScreenViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CityListTableViewCell") as? CityListTableViewCell {
-            guard let name = viewModel.searchedCities?.response[indexPath.row].place.name else { return UITableViewCell()}
-                    
+            guard let name = viewModel.searchedCities?.response[indexPath.row].place.name else { return UITableViewCell() }
+            
             cell.setup(cityName: name)
             return cell
         }
@@ -92,9 +92,8 @@ extension CityListScreenViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.onCellTap(index: indexPath.row)
     }
-    
 }
-
+//MARK: TextFieldDelegate Extentions
 extension CityListScreenViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -102,7 +101,7 @@ extension CityListScreenViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let text = textField.text else { return true}
+        guard let text = textField.text else { return true }
         
         if textField.text != "" {
             let name = text + string

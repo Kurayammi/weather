@@ -26,18 +26,19 @@ class MapScreenViewController: UIViewController {
     
     private var viewModel: MapScreenVIewModel?
     private weak var coordinator: MainCoordinator?
-    
-    func start(viewModel: MapScreenVIewModel,
-               coordinator: MainCoordinator) {
-        self.viewModel = viewModel
-        self.coordinator = coordinator
-    }
-    
+   
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupCallBacks()
         viewModel?.setupCallBacks()
+    }
+    
+    func start(viewModel: MapScreenVIewModel,
+               coordinator: MainCoordinator) {
+        self.viewModel = viewModel
+        self.coordinator = coordinator
     }
     
     private func setupUI() {
@@ -73,7 +74,7 @@ class MapScreenViewController: UIViewController {
         }
     }
 }
-
+//MARK: TextFieldDelegate Extentions
 extension MapScreenViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)

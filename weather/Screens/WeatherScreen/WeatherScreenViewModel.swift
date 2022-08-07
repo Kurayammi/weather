@@ -12,9 +12,9 @@ final class WeatherScreenViewModel {
     private let networkService = WeatherScreenNetworkService()
     private let locationManager = LocationManager()
     
-    var weekModel: [periodResponseModel] = []
-    var dayModel: periodResponseModel?
-    var hoursModel: [periodResponseModel] = []
+    var weekModel: [PeriodResponseModel] = []
+    var dayModel: PeriodResponseModel?
+    var hoursModel: [PeriodResponseModel] = []
     
     var currentLocation: CLLocationCoordinate2D?
     var currentCityName: String?
@@ -68,7 +68,7 @@ final class WeatherScreenViewModel {
         networkService.showError = showAlert
     }
     
-    private func didGetWeekResponce(responce: [periodResponseModel]) {
+    private func didGetWeekResponce(responce: [PeriodResponseModel]) {
         self.weekModel = responce
         if self.currentCityName == nil {
             self.currentCityName = self.locationManager.currentCityName
@@ -77,7 +77,7 @@ final class WeatherScreenViewModel {
         updateUI?()
     }
     
-    private func didGetHourResponce(responce: [periodResponseModel]) {
+    private func didGetHourResponce(responce: [PeriodResponseModel]) {
         self.hoursModel = responce
         updateUIAfterSelectDay?()
     }

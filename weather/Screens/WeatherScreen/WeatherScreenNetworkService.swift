@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct periodResponseModel: Codable {
+struct PeriodResponseModel: Codable {
     let timestamp: Int
     let maxTempC: Int
     let minTempC: Int
@@ -20,7 +20,7 @@ struct periodResponseModel: Codable {
 
 struct WeatherResponseModel: Codable {
     let interval: String
-    let periods: [periodResponseModel]
+    let periods: [PeriodResponseModel]
 }
 
 struct GetWeatherResponseModel: Codable {
@@ -34,10 +34,10 @@ enum Interval {
 }
 
 final class WeatherScreenNetworkService {
-    
+
     private let networkManager = NetworkManager()
-    var didGetWeekResponce: ((_ responce: [periodResponseModel]) -> Void)?
-    var didGetHourResponce: ((_ responce: [periodResponseModel]) -> Void)?
+    var didGetWeekResponce: ((_ responce: [PeriodResponseModel]) -> Void)?
+    var didGetHourResponce: ((_ responce: [PeriodResponseModel]) -> Void)?
     var showError: ((_ title: String, _ message: String) -> Void)?
     
     private func createURLFromParameters(lat: Double,
@@ -115,7 +115,6 @@ final class WeatherScreenNetworkService {
                     return
                 }
                 self.didGetWeekResponce?(data)
-                
             case .failure(let error):
                 print(error)
                 self.showError?("Network Error",

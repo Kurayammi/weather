@@ -28,9 +28,8 @@ final class CityListNetworkService {
         let secretItem = URLQueryItem(name: "client_secret", value: APIDetails.secret)
         
         let nameItem = URLQueryItem(name: "query", value: "name:^\(cityName.lowercased())")
-        
         let limitItem = URLQueryItem(name: "limit", value: "20")
-        components.queryItems = [nameItem,limitItem, idItem, secretItem]
+        components.queryItems = [nameItem, limitItem, idItem,  secretItem]
         
         print(components.url!)
         return components.url!

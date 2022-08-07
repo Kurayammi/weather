@@ -19,22 +19,22 @@ final class Helpers {
             return dateFormatterGet.string(from: date)
         }
     
-    static func setupNameForWindImage(wind_deg: Double) -> String {
-            if wind_deg >= 0 && wind_deg <= 45{
+    static func setupNameForWindImage(windDeg: Double) -> String {
+            if windDeg >= 0 && windDeg <= 45{
                 return "icon_wind_w"
-            } else if wind_deg >= 45 && wind_deg <= 90 {
+            } else if windDeg >= 45 && windDeg <= 90 {
                 return "icon_wind_wn"
-            } else if wind_deg >= 90 && wind_deg <= 135 {
+            } else if windDeg >= 90 && windDeg <= 135 {
                 return "icon_wind_n"
-            } else if wind_deg >= 135 && wind_deg <= 180 {
+            } else if windDeg >= 135 && windDeg <= 180 {
                 return "icon_wind_ne"
-            } else if wind_deg >= 180 && wind_deg <= 225 {
+            } else if windDeg >= 180 && windDeg <= 225 {
                 return "icon_wind_e"
-            } else if wind_deg >= 225 && wind_deg <= 270 {
+            } else if windDeg >= 225 && windDeg <= 270 {
                 return "icon_wind_se"
-            } else if wind_deg >= 270 && wind_deg <= 315 {
+            } else if windDeg >= 270 && windDeg <= 315 {
                 return "icon_wind_s"
-            } else if wind_deg >= 315 && wind_deg <= 360 {
+            } else if windDeg >= 315 && windDeg <= 360 {
                 return "icon_wind_ws"
             }
             return ""
