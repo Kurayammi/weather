@@ -25,7 +25,6 @@
 		406FD85728999DE800588EBF /* MapScreenNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406FD85628999DE800588EBF /* MapScreenNetworkService.swift */; };
 		406FD85F289AB94900588EBF /* CityListScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406FD85D289AB94900588EBF /* CityListScreenViewController.swift */; };
 		406FD860289AB94900588EBF /* CityListScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 406FD85E289AB94900588EBF /* CityListScreenViewController.xib */; };
-		406FD863289ABA5F00588EBF /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 406FD862289ABA5F00588EBF /* cities.json */; };
 		406FD865289ABA8900588EBF /* CityListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406FD864289ABA8900588EBF /* CityListViewModel.swift */; };
 		406FD867289ABD1B00588EBF /* CityListNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406FD866289ABD1B00588EBF /* CityListNetworkService.swift */; };
 		406FD86B289AC2AA00588EBF /* CityListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406FD869289AC2AA00588EBF /* CityListTableViewCell.swift */; };
@@ -59,7 +58,6 @@
 		406FD85628999DE800588EBF /* MapScreenNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenNetworkService.swift; sourceTree = "<group>"; };
 		406FD85D289AB94900588EBF /* CityListScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListScreenViewController.swift; sourceTree = "<group>"; };
 		406FD85E289AB94900588EBF /* CityListScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityListScreenViewController.xib; sourceTree = "<group>"; };
-		406FD862289ABA5F00588EBF /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		406FD864289ABA8900588EBF /* CityListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewModel.swift; sourceTree = "<group>"; };
 		406FD866289ABD1B00588EBF /* CityListNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListNetworkService.swift; sourceTree = "<group>"; };
 		406FD869289AC2AA00588EBF /* CityListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListTableViewCell.swift; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				407606A2289565E500F4A9EB /* Assets.xcassets */,
-				406FD862289ABA5F00588EBF /* cities.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -276,7 +273,6 @@
 				407606A6289565E500F4A9EB /* LaunchScreen.storyboard in Resources */,
 				407606A3289565E500F4A9EB /* Assets.xcassets in Resources */,
 				407606B228956F7200F4A9EB /* WeatherScreenViewController.xib in Resources */,
-				406FD863289ABA5F00588EBF /* cities.json in Resources */,
 				40C34476289BCCD6005D6DD3 /* LoaderView.xib in Resources */,
 				40185C0E2895B35F00750D06 /* WeekInfoItemTableViewCell.xib in Resources */,
 				40185C2028986D2500750D06 /* HourItemCollectionViewCell.xib in Resources */,

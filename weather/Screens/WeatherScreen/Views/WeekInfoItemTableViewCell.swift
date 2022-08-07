@@ -7,8 +7,8 @@
 
 import UIKit
 
-class WeekInfoItemTableViewCell: UITableViewCell {
-
+final class WeekInfoItemTableViewCell: UITableViewCell {
+    
     @IBOutlet private var dayLabel: UILabel!
     @IBOutlet private var tempLabel: UILabel!
     @IBOutlet private var weatherIcon: UIImageView!
@@ -17,10 +17,10 @@ class WeekInfoItemTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     

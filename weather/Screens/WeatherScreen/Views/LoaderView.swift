@@ -7,8 +7,8 @@
 
 import UIKit
 
-class LoaderView: UIView {
-
+final class LoaderView: UIView {
+    
     @IBOutlet private var contentView: UIView!
     @IBOutlet private var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private var titleLabel: UILabel!

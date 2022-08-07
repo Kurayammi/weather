@@ -12,8 +12,12 @@ struct GetLocation: Codable {
     let lat: Double
     let long: Double
 }
+struct Place: Codable {
+    let name: String
+}
 struct GetCity: Codable {
     let loc: GetLocation
+    let place: Place
 }
 
 struct GetCityResponceModel: Codable {
@@ -23,7 +27,11 @@ struct GetCityResponceModel: Codable {
 final class MapScreenNetworkService {
     
     private let networkManager = NetworkManager()
+    
     var didGetResponce: ((_ location: CLLocationCoordinate2D) -> Void)?
+    
+    var showError: ((_ title: String, _ message: String) -> Void)?
+    
     private func createUrlForCity(cityName: String) -> URL {
         
         var components = URLComponents()
@@ -51,9 +59,9 @@ final class MapScreenNetworkService {
             switch result {
             case .success(let response):
                 print(response)
-                //let data = response.response[0].periods
-                //self.didGetWeekResponce?(data)
-                guard let lat = response.response.first?.loc.lat else {return}
+                guard let lat = response.response.first?.loc.lat else {
+                    self.showError?("Map error", "Can not found city")
+                    return }
                 guard let lon = response.response.first?.loc.long else { return }
                 
                 let location = CLLocationCoordinate2D(latitude: lat, longitude: lon)
@@ -61,6 +69,7 @@ final class MapScreenNetworkService {
                 self.didGetResponce?(location)
                 
             case .failure(let error):
+                self.showError?("Map error", "Can not found city")
                 print(error)
             }
         }

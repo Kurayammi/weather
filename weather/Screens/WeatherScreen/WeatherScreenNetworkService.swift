@@ -38,6 +38,7 @@ final class WeatherScreenNetworkService {
     private let networkManager = NetworkManager()
     var didGetWeekResponce: ((_ responce: [periodResponseModel]) -> Void)?
     var didGetHourResponce: ((_ responce: [periodResponseModel]) -> Void)?
+    var showError: ((_ title: String, _ message: String) -> Void)?
     
     private func createURLFromParameters(lat: Double,
                                          lon: Double,
@@ -86,9 +87,15 @@ final class WeatherScreenNetworkService {
                                    objectType: GetWeatherResponseModel.self) { result in
             switch result {
             case.success(let response):
-                let data = response.response[0].periods
+                guard let data = response.response.first?.periods else {
+                    self.showError?("Network Error",
+                                    "Cant get day info")
+                    return
+                }
                 self.didGetHourResponce?(data)
             case .failure(let error):
+                self.showError?("Network Error",
+                                "Cant get day info")
                 print(error)
             }
         }
@@ -102,11 +109,17 @@ final class WeatherScreenNetworkService {
         networkManager.dataRequest(with: url, objectType: GetWeatherResponseModel.self) { result in
             switch result {
             case .success(let response):
-                let data = response.response[0].periods
+                guard let data = response.response.first?.periods else {
+                    self.showError?("Network Error",
+                                    "Cant get day info")
+                    return
+                }
                 self.didGetWeekResponce?(data)
                 
             case .failure(let error):
                 print(error)
+                self.showError?("Network Error",
+                                "Cant get week info")
             }
         }
     }

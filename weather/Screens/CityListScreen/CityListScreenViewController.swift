@@ -18,7 +18,8 @@ final class CityListScreenViewController: UIViewController {
     }
     
     @IBAction private func navigationSearchButtonAction(_ sender: Any) {
-        viewModel.lookup(prefix: textField.text)
+        guard let text = textField.text else { return }
+        viewModel.onTextChange(text: text)
     }
     
     private let viewModel = CityListViewModel()
@@ -73,13 +74,15 @@ final class CityListScreenViewController: UIViewController {
 
 extension CityListScreenViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.searchedCities.count
+        viewModel.searchedCities?.response.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CityListTableViewCell") as? CityListTableViewCell {
-            cell.setup(cityName: viewModel.searchedCities[indexPath.row])
+            guard let name = viewModel.searchedCities?.response[indexPath.row].place.name else { return UITableViewCell()}
+                    
+            cell.setup(cityName: name)
             return cell
         }
         
@@ -95,6 +98,19 @@ extension CityListScreenViewController: UITableViewDelegate, UITableViewDataSour
 extension CityListScreenViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true}
+        
+        if textField.text != "" {
+            let name = text + string
+            viewModel.onTextChange(text: name)
+        } else {
+            viewModel.onTextChange(text: string)
+        }
+        
         return true
     }
 }

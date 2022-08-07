@@ -7,8 +7,8 @@
 
 import UIKit
 
-class HourItemCollectionViewCell: UICollectionViewCell {
-
+final class HourItemCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet private var timeLabel: UILabel!
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var tempLabel: UILabel!

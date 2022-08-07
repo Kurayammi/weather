@@ -11,7 +11,10 @@ import CoreLocation
 final class CityListNetworkService {
     
     private let networkManager = NetworkManager()
-    var didGetResponce: ((_ location: CLLocationCoordinate2D) -> Void)?
+    var didGetResponce: ((_ responce: GetCityResponceModel) -> Void)?
+    
+    var showError: ((_ title: String, _ message: String) -> Void)?
+    
     private func createUrlForCity(cityName: String) -> URL {
         
         var components = URLComponents()
@@ -24,10 +27,12 @@ final class CityListNetworkService {
         let idItem = URLQueryItem(name: "client_id", value: APIDetails.id)
         let secretItem = URLQueryItem(name: "client_secret", value: APIDetails.secret)
         
-        let nameItem = URLQueryItem(name: "query", value: "name:\(cityName.lowercased())")
+        let nameItem = URLQueryItem(name: "query", value: "name:^\(cityName.lowercased())")
         
-        components.queryItems = [nameItem, idItem, secretItem]
+        let limitItem = URLQueryItem(name: "limit", value: "20")
+        components.queryItems = [nameItem,limitItem, idItem, secretItem]
         
+        print(components.url!)
         return components.url!
     }
     
@@ -39,15 +44,10 @@ final class CityListNetworkService {
             switch result {
             case .success(let response):
                 print(response)
-                guard let lat = response.response.first?.loc.lat else {return}
-                guard let lon = response.response.first?.loc.long else { return }
-                
-                let location = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-                
-                self.didGetResponce?(location)
+                self.didGetResponce?(response)
                 
             case .failure(let error):
-                print(error)
+                self.showError?("Network Error", error.localizedDescription)
             }
         }
     }

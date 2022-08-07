@@ -15,6 +15,8 @@ final class MapScreenVIewModel {
     var currentLocation: CLLocationCoordinate2D?
     var inputText: String?
     
+    var showAlert: ((_ title: String, _ message: String) -> Void)?
+    
     func onSearchButtonTapped() {
         if let inputText = inputText {
             networkService.sendRequest(cityName: inputText)
@@ -26,6 +28,7 @@ final class MapScreenVIewModel {
             self.currentLocation = location
             self.updateUI?()
         }
+        networkService.showError = showAlert
     }
     
     init(currentLocation: CLLocationCoordinate2D?) {

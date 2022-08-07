@@ -65,6 +65,12 @@ class MapScreenViewController: UIViewController {
                 self.setupMap()
             }
         }
+        
+        viewModel?.showAlert = {title, message in
+            DispatchQueue.main.async {
+                self.showAlertFor(title: title, message: message)
+            }
+        }
     }
 }
 

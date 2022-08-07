@@ -18,9 +18,8 @@ struct GetAllCitiesResponseModel: Codable {
 
 final class CityListViewModel {
     private let networkService = CityListNetworkService()
-    private var cities: [String] = []
     
-    var searchedCities: [String] = []
+    var searchedCities: GetCityResponceModel?
     var currentLocation: CLLocationCoordinate2D?
     var currentCityName: String?
     
@@ -28,54 +27,31 @@ final class CityListViewModel {
     var goBack: (() -> Void)?
     
     func didLoad() {
-        parseCitiesJson()
         setupCallbacks()
     }
+    
     func onCellTap(index: Int) {
-        networkService.sendRequest(cityName: searchedCities[index])
+        guard let lat = searchedCities?.response[index].loc.lat else { return }
+        guard let lon = searchedCities?.response[index].loc.long else { return }
+        
+        currentLocation = CLLocationCoordinate2D(
+            latitude: lat,
+            longitude: lon)
+        
+        currentCityName = searchedCities?.response[index].place.name
+        goBack?()
     }
     
-    func lookup(prefix: String?) {
-        currentCityName = prefix
-        
-        if let prefix = prefix {
-            if prefix == "" {
-                return
-            }
-            searchedCities = cities.filter { item in
-                return item.lowercased().contains(prefix.lowercased())
-            }
-            reloadTableView?()
-        }
+    func onTextChange(text: String) {
+        networkService.sendRequest(cityName: text)
     }
     
     private func setupCallbacks() {
         networkService.didGetResponce = {
-            location in
-            self.currentLocation = location
-            self.goBack?()
-        }
-    }
-    
-    private func parseCitiesJson() {
-        if let url = Bundle.main.url(forResource: "cities", withExtension: "json") {
-            do {
-                let data = try Data(contentsOf: url)
-                let decoder = JSONDecoder()
-                let jsonData = try decoder.decode(GetAllCitiesResponseModel.self, from: data)
-                initCities(data: jsonData.data)
-            } catch {
-                print("error:\(error)")
-            }
-        }
-    }
-    
-    private func initCities(data: [GetAllCitiesItemResponseModel]) {
-        cities = []
-        for country in data {
-            if let cities = country.cities {
-                self.cities += cities
-            }
+            responce in
+            print(responce)
+            self.searchedCities = responce
+            self.reloadTableView?()
         }
     }
 }

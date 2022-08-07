@@ -21,6 +21,7 @@ final class WeatherScreenViewModel {
     
     var updateUI: (() -> Void)?
     var updateUIAfterSelectDay: (() -> Void)?
+    var showAlert: ((_ title: String, _ message: String) -> Void)?
     
     func didLoad() {
         setupCallBacks()
@@ -64,6 +65,7 @@ final class WeatherScreenViewModel {
         
         networkService.didGetWeekResponce = didGetWeekResponce
         networkService.didGetHourResponce = didGetHourResponce
+        networkService.showError = showAlert
     }
     
     private func didGetWeekResponce(responce: [periodResponseModel]) {

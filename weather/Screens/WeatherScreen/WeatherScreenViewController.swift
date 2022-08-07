@@ -120,9 +120,14 @@ final class WeatherScreenViewController: UIViewController {
                 self.setupHourInfoView()
             }
         }
+        
+        viewModel.showAlert = {title, message in
+            DispatchQueue.main.async {
+                self.showAlertFor(title: title, message: message)
+            }
+        }
     }
 }
-
 //MARK: TableView Extentions
 extension WeatherScreenViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
