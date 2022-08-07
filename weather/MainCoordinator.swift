@@ -8,17 +8,22 @@
 import UIKit
 import CoreLocation
 final class MainCoordinator {
-    var navigationController: UINavigationController?
+    private(set) var window: UIWindow
+    private var navigationController: UINavigationController?
     
     private let locationManager = LocationManager()
+    private var weatherScreenVC: WeatherScreenViewController?
     
     func start() {
-        let vc = WeatherScreenViewController()
-        vc.start(coordinator: self,
+        weatherScreenVC = WeatherScreenViewController()
+        weatherScreenVC?.start(coordinator: self,
                  currentLocation: nil,
                  currentCityName: nil)
         
-        navigationController = UINavigationController(rootViewController: vc)
+        navigationController = UINavigationController(rootViewController: weatherScreenVC ?? UIViewController())
+        window.rootViewController = navigationController
+        
+        window.makeKeyAndVisible()
     }
     
     func pushMapScreen(currentLocation: CLLocationCoordinate2D?) {
@@ -30,11 +35,10 @@ final class MainCoordinator {
     
     func pushWeatherScreen(location: CLLocationCoordinate2D?,
                            currentCityName: String?) {
-        let vc = WeatherScreenViewController()
-        vc.start(coordinator: self,
+        weatherScreenVC?.start(coordinator: self,
                  currentLocation: location,
                  currentCityName: currentCityName)
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     func pushCityListScreen(location: CLLocationCoordinate2D?,
@@ -44,5 +48,9 @@ final class MainCoordinator {
                  currentLocation: location,
                  currentCityName: currentCityName)
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    init(window: UIWindow) {
+        self.window = window
     }
 }

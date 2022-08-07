@@ -25,7 +25,7 @@ class MapScreenViewController: UIViewController {
     }
     
     private var viewModel: MapScreenVIewModel?
-    private var coordinator: MainCoordinator?
+    private weak var coordinator: MainCoordinator?
     
     func start(viewModel: MapScreenVIewModel,
                coordinator: MainCoordinator) {
@@ -55,7 +55,8 @@ class MapScreenViewController: UIViewController {
     
     private func setupTextField() {
         textField.delegate = self
-        textField.text = "Search"
+        textField.text = nil
+        textField.placeholder = "Enter city"
     }
     
     private func setupCallBacks() {

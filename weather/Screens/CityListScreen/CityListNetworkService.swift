@@ -15,14 +15,14 @@ final class CityListNetworkService {
     private func createUrlForCity(cityName: String) -> URL {
         
         var components = URLComponents()
-        components.scheme = APIDetails.Scheme
-        components.host   = APIDetails.Host
-        components.path   = APIDetails.GetCiytDataPath
+        components.scheme = APIDetails.scheme
+        components.host   = APIDetails.host
+        components.path   = APIDetails.getCiytDataPath
         
         components.queryItems = [URLQueryItem]()
         
-        let idItem = URLQueryItem(name: "client_id", value: APIDetails.Id)
-        let secretItem = URLQueryItem(name: "client_secret", value: APIDetails.Secret)
+        let idItem = URLQueryItem(name: "client_id", value: APIDetails.id)
+        let secretItem = URLQueryItem(name: "client_secret", value: APIDetails.secret)
         
         let nameItem = URLQueryItem(name: "query", value: "name:\(cityName.lowercased())")
         

@@ -12,7 +12,6 @@ enum AppError: Error {
     case networkError(Error)
     case dataNotFound
     case jsonParsingError(Error)
-    case invalidStatusCode(Int)
 }
 
 //Result enum to show success or failure

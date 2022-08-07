@@ -47,14 +47,14 @@ final class WeatherScreenNetworkService {
         let coords = "/\(lat),\(lon)"
         var components = URLComponents()
         
-        components.scheme = APIDetails.Scheme
-        components.host   = APIDetails.Host
-        components.path   = APIDetails.GetWeatherDataPath + coords
+        components.scheme = APIDetails.scheme
+        components.host   = APIDetails.host
+        components.path   = APIDetails.getWeatherDataPath + coords
         components.queryItems = [URLQueryItem]()
         
         ///create parametrs and filters
-        let idItem = URLQueryItem(name: "client_id", value: APIDetails.Id)
-        let secretItem = URLQueryItem(name: "client_secret", value: APIDetails.Secret)
+        let idItem = URLQueryItem(name: "client_id", value: APIDetails.id)
+        let secretItem = URLQueryItem(name: "client_secret", value: APIDetails.secret)
         
         switch forInterval {
         case .week: components.queryItems = [idItem, secretItem]

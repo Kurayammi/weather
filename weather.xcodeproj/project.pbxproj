@@ -17,6 +17,7 @@
 		40185C1F28986D2500750D06 /* HourItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40185C1D28986D2500750D06 /* HourItemCollectionViewCell.swift */; };
 		40185C2028986D2500750D06 /* HourItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40185C1E28986D2500750D06 /* HourItemCollectionViewCell.xib */; };
 		40185C222898768400750D06 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40185C212898768400750D06 /* Constans.swift */; };
+		40623B3D289FEA930036A104 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40623B3C289FEA930036A104 /* Extentions.swift */; };
 		406FD8502899732900588EBF /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406FD84E2899732900588EBF /* MapScreenViewController.swift */; };
 		406FD8512899732900588EBF /* MapScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 406FD84F2899732900588EBF /* MapScreenViewController.xib */; };
 		406FD8532899750600588EBF /* MapScreenVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406FD8522899750600588EBF /* MapScreenVIewModel.swift */; };
@@ -50,6 +51,7 @@
 		40185C1D28986D2500750D06 /* HourItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		40185C1E28986D2500750D06 /* HourItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		40185C212898768400750D06 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
+		40623B3C289FEA930036A104 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		406FD84E2899732900588EBF /* MapScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
 		406FD84F2899732900588EBF /* MapScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapScreenViewController.xib; sourceTree = "<group>"; };
 		406FD8522899750600588EBF /* MapScreenVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenVIewModel.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				40185C192898057A00750D06 /* Helpers.swift */,
 				40185C212898768400750D06 /* Constans.swift */,
+				40623B3C289FEA930036A104 /* Extentions.swift */,
 			);
 			path = "Helpers+Extentions";
 			sourceTree = "<group>";
@@ -129,6 +132,7 @@
 		406FD861289ABA4100588EBF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				407606A2289565E500F4A9EB /* Assets.xcassets */,
 				406FD862289ABA5F00588EBF /* cities.json */,
 			);
 			path = Resources;
@@ -162,14 +166,13 @@
 		40760698289565DF00F4A9EB /* weather */ = {
 			isa = PBXGroup;
 			children = (
-				406FD861289ABA4100588EBF /* Resources */,
-				406FD854289977E800588EBF /* MainCoordinator.swift */,
-				40185C182898056000750D06 /* Helpers+Extentions */,
-				40185C0F2896AD5700750D06 /* Managers */,
-				407606B32895731300F4A9EB /* Screens */,
 				40760699289565DF00F4A9EB /* AppDelegate.swift */,
 				4076069B289565DF00F4A9EB /* SceneDelegate.swift */,
-				407606A2289565E500F4A9EB /* Assets.xcassets */,
+				406FD854289977E800588EBF /* MainCoordinator.swift */,
+				407606B32895731300F4A9EB /* Screens */,
+				40185C0F2896AD5700750D06 /* Managers */,
+				406FD861289ABA4100588EBF /* Resources */,
+				40185C182898056000750D06 /* Helpers+Extentions */,
 				407606A4289565E500F4A9EB /* LaunchScreen.storyboard */,
 				407606A7289565E500F4A9EB /* Info.plist */,
 			);
@@ -309,6 +312,7 @@
 				40C34474289BCC4C005D6DD3 /* LoaderView.swift in Sources */,
 				406FD85728999DE800588EBF /* MapScreenNetworkService.swift in Sources */,
 				40185C172897EB1300750D06 /* LocationManager.swift in Sources */,
+				40623B3D289FEA930036A104 /* Extentions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

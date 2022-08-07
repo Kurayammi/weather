@@ -22,7 +22,7 @@ final class CityListScreenViewController: UIViewController {
     }
     
     private let viewModel = CityListViewModel()
-    private var coordinator: MainCoordinator?
+    private weak var coordinator: MainCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,8 @@ final class CityListScreenViewController: UIViewController {
         cityListTableView.reloadData()
         
         textField.delegate = self
-        textField.text = "Search"
+        textField.text = nil
+        textField.placeholder = "Enter city"
     }
     
     private func goBack() {

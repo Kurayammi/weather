@@ -24,7 +24,10 @@ final class WeatherScreenViewModel {
     
     func didLoad() {
         setupCallBacks()
-        
+        sendRequests()
+    }
+    
+    func sendRequests() {
         if currentLocation == nil {
             locationManager.requestLocation()
         } else {
@@ -38,7 +41,6 @@ final class WeatherScreenViewModel {
                 lon: currentLocation.longitude)
         }
     }
-    
     func didEnd() -> CLLocationCoordinate2D? {
         return locationManager.location
     }

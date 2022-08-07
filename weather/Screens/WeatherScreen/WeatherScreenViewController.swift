@@ -33,15 +33,16 @@ final class WeatherScreenViewController: UIViewController {
     }
     
     private let viewModel = WeatherScreenViewModel()
-    private var coordinator: MainCoordinator?
+    private weak var coordinator: MainCoordinator?
     private var loaderView = LoaderView()
     
     func start(coordinator: MainCoordinator,
                currentLocation: CLLocationCoordinate2D?,
                currentCityName: String?) {
         self.coordinator = coordinator
-        self.viewModel.currentLocation = currentLocation
-        self.viewModel.currentCityName = currentCityName
+        viewModel.currentLocation = currentLocation
+        viewModel.currentCityName = currentCityName
+        viewModel.sendRequests()
     }
     
     //MARK: LifeCycle

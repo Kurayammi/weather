@@ -6,21 +6,6 @@
 //
 
 import Foundation
-extension Int {
-    func toString() -> String {
-        return String(self)
-    }
-}
-
-extension Double {
-    func toInt() -> Int {
-        return Int(self)
-    }
-    
-    func toString() -> String {
-        return String(self)
-    }
-}
 
 final class Helpers {
     
