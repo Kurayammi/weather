@@ -71,24 +71,26 @@ final class WeatherScreenViewController: UIViewController {
     }
     
     private func setupLoader() {
+        let width = UIScreen.main.bounds.width
+        let height = UIScreen.main.bounds.height
         loaderView.frame = CGRect(x: 0,
                                   y: 0,
-                                  width: self.view.frame.width,
-                                  height: self.view.frame.height)
-        
+                                  width: width,
+                                  height: height)
+         
         self.view.addSubview(loaderView)
     }
     
     private func setupDayInfoView() {
         guard let dayInfo = viewModel.dayModel else { return }
-        let imageName = Helpers.getImageNameFromWeatherCode(code: dayInfo.weatherPrimaryCoded, isDay: dayInfo.isDay)
+        let imageName = WeatherImageSetupHelper().getImageNameFromWeatherCode(code: dayInfo.weatherPrimaryCoded, isDay: dayInfo.isDay)
         dayInfoImageVIew.image = UIImage(named: imageName)
         
-        dayInfoTitleLabel.text = Helpers.dateFormatter(time: dayInfo.timestamp, format: "E, d MMM")
+        dayInfoTitleLabel.text = CustomeDateFormatter().convertDate(time: dayInfo.timestamp, format: "E, d MMM")
         dayInfoTempTitleLabel.text = dayInfo.maxTempC.toString() + "°/ " + dayInfo.minTempC.toString() + "°"
         dayInfoHumidityTitleLabel.text = dayInfo.humidity.toString() + "%"
         dayInfoWindTitleLabel.text = dayInfo.windSpeedKPH.toString() + " km/h"
-        dayInfoWindOrientationImage.image = UIImage(named: Helpers.setupNameForWindImage(windDeg: dayInfo.windDirMaxDEG))
+        dayInfoWindOrientationImage.image = UIImage(named: WeatherImageSetupHelper().setupNameForWindImage(windDeg: dayInfo.windDirMaxDEG))
     }
     
     private func setupHourInfoView() {
@@ -102,6 +104,8 @@ final class WeatherScreenViewController: UIViewController {
         weekInfoTableView.delegate = self
         weekInfoTableView.dataSource = self
         weekInfoTableView.register(UINib(nibName: "WeekInfoItemTableViewCell", bundle: nil), forCellReuseIdentifier: "WeekInfoItemTableViewCell")
+        
+       
         weekInfoTableView.reloadData()
     }
     
@@ -110,7 +114,10 @@ final class WeatherScreenViewController: UIViewController {
         viewModel.updateUI = {
             DispatchQueue.main.async {
                 self.setupUI()
-                self.loaderView.isHidden = true
+                self.loaderView.removeFromSuperview()
+                
+                let firstIndex = IndexPath(row: 0, section: 0)
+                self.weekInfoTableView.selectRow(at: firstIndex, animated: true, scrollPosition: .top)
             }
         }
         
@@ -134,7 +141,7 @@ extension WeatherScreenViewController: UITableViewDelegate, UITableViewDataSourc
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "WeekInfoItemTableViewCell") as? WeekInfoItemTableViewCell {
             
-            let imageName = Helpers.getImageNameFromWeatherCode(
+            let imageName = WeatherImageSetupHelper().getImageNameFromWeatherCode(
                 code: viewModel.weekModel[indexPath.row].weatherPrimaryCoded,
                 isDay: viewModel.weekModel[indexPath.row].isDay)
             
@@ -172,7 +179,7 @@ extension WeatherScreenViewController: UICollectionViewDataSource, UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourItemCollectionViewCell", for: indexPath) as? HourItemCollectionViewCell {
             
-            let imageName = Helpers.getImageNameFromWeatherCode(
+            let imageName = WeatherImageSetupHelper().getImageNameFromWeatherCode(
                 code: viewModel.hoursModel[indexPath.row].weatherPrimaryCoded,
                 isDay: viewModel.hoursModel[indexPath.row].isDay)
             

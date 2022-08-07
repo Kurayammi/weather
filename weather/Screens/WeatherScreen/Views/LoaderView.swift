@@ -23,18 +23,10 @@ final class LoaderView: UIView {
         commonInit()
     }
     
-    func start(title: String) {
-        titleLabel.text = title
-        activityIndicator.startAnimating()
-    }
-    
-    func stop() {
-        activityIndicator.stopAnimating()
-    }
-    
     private func commonInit() {
         Bundle.main.loadNibNamed("LoaderView", owner: self)
         addSubview(contentView)
+        
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }

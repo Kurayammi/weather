@@ -30,7 +30,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OAm-1C-L1K" userLabel="Icon">
-                        <rect key="frame" x="275" y="0.0" width="45" height="100"/>
+                        <rect key="frame" x="265" y="0.0" width="45" height="100"/>
                         <color key="tintColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="45" id="Khp-TJ-cd1"/>
@@ -46,7 +46,7 @@
                     <constraint firstItem="mjT-Yz-Ghj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="S5j-Uz-e9Q"/>
                     <constraint firstAttribute="bottom" secondItem="OAm-1C-L1K" secondAttribute="bottom" id="U2G-Z1-BJT"/>
                     <constraint firstItem="cdy-Ld-7Sp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XeP-5M-d31"/>
-                    <constraint firstAttribute="trailing" secondItem="OAm-1C-L1K" secondAttribute="trailing" id="y8j-bC-CVw"/>
+                    <constraint firstAttribute="trailing" secondItem="OAm-1C-L1K" secondAttribute="trailing" constant="10" id="y8j-bC-CVw"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

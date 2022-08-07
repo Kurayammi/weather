@@ -13,8 +13,8 @@ final class HourItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var tempLabel: UILabel!
     
     func setup(time: Int, imageName: String, temp: String) {
-        timeLabel.text = Helpers.dateFormatter(time: time, format: "HH")
+        timeLabel.text = CustomeDateFormatter().convertDate(time: time, format: "HH") + "oo"
         imageView.image = UIImage(named: imageName)
-        tempLabel.text = temp
+        tempLabel.text = temp + "°"
     }
 }

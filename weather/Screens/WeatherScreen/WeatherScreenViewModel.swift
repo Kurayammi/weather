@@ -66,6 +66,7 @@ final class WeatherScreenViewModel {
         networkService.didGetWeekResponce = didGetWeekResponce
         networkService.didGetHourResponce = didGetHourResponce
         networkService.showError = showAlert
+        locationManager.showError = showAlert
     }
     
     private func didGetWeekResponce(responce: [PeriodResponseModel]) {

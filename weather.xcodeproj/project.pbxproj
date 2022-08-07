@@ -13,10 +13,11 @@
 		40185C132896B01D00750D06 /* WeatherScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40185C122896B01D00750D06 /* WeatherScreenViewModel.swift */; };
 		40185C152896B08300750D06 /* WeatherScreenNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40185C142896B08300750D06 /* WeatherScreenNetworkService.swift */; };
 		40185C172897EB1300750D06 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40185C162897EB1300750D06 /* LocationManager.swift */; };
-		40185C1A2898057A00750D06 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40185C192898057A00750D06 /* Helpers.swift */; };
+		40185C1A2898057A00750D06 /* WeatherImageSetupHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40185C192898057A00750D06 /* WeatherImageSetupHelper.swift */; };
 		40185C1F28986D2500750D06 /* HourItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40185C1D28986D2500750D06 /* HourItemCollectionViewCell.swift */; };
 		40185C2028986D2500750D06 /* HourItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40185C1E28986D2500750D06 /* HourItemCollectionViewCell.xib */; };
 		40185C222898768400750D06 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40185C212898768400750D06 /* Constans.swift */; };
+		4031B1FE28A03D9400CAC047 /* CustomeDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4031B1FD28A03D9400CAC047 /* CustomeDateFormatter.swift */; };
 		40623B3D289FEA930036A104 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40623B3C289FEA930036A104 /* Extentions.swift */; };
 		406FD8502899732900588EBF /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406FD84E2899732900588EBF /* MapScreenViewController.swift */; };
 		406FD8512899732900588EBF /* MapScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 406FD84F2899732900588EBF /* MapScreenViewController.xib */; };
@@ -46,10 +47,11 @@
 		40185C122896B01D00750D06 /* WeatherScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherScreenViewModel.swift; sourceTree = "<group>"; };
 		40185C142896B08300750D06 /* WeatherScreenNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherScreenNetworkService.swift; sourceTree = "<group>"; };
 		40185C162897EB1300750D06 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		40185C192898057A00750D06 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		40185C192898057A00750D06 /* WeatherImageSetupHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherImageSetupHelper.swift; sourceTree = "<group>"; };
 		40185C1D28986D2500750D06 /* HourItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		40185C1E28986D2500750D06 /* HourItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		40185C212898768400750D06 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
+		4031B1FD28A03D9400CAC047 /* CustomeDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeDateFormatter.swift; sourceTree = "<group>"; };
 		40623B3C289FEA930036A104 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		406FD84E2899732900588EBF /* MapScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
 		406FD84F2899732900588EBF /* MapScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapScreenViewController.xib; sourceTree = "<group>"; };
@@ -97,9 +99,10 @@
 		40185C182898056000750D06 /* Helpers+Extentions */ = {
 			isa = PBXGroup;
 			children = (
-				40185C192898057A00750D06 /* Helpers.swift */,
+				40185C192898057A00750D06 /* WeatherImageSetupHelper.swift */,
 				40185C212898768400750D06 /* Constans.swift */,
 				40623B3C289FEA930036A104 /* Extentions.swift */,
+				4031B1FD28A03D9400CAC047 /* CustomeDateFormatter.swift */,
 			);
 			path = "Helpers+Extentions";
 			sourceTree = "<group>";
@@ -168,8 +171,8 @@
 				406FD854289977E800588EBF /* MainCoordinator.swift */,
 				407606B32895731300F4A9EB /* Screens */,
 				40185C0F2896AD5700750D06 /* Managers */,
-				406FD861289ABA4100588EBF /* Resources */,
 				40185C182898056000750D06 /* Helpers+Extentions */,
+				406FD861289ABA4100588EBF /* Resources */,
 				407606A4289565E500F4A9EB /* LaunchScreen.storyboard */,
 				407606A7289565E500F4A9EB /* Info.plist */,
 			);
@@ -314,12 +317,13 @@
 				406FD855289977E800588EBF /* MainCoordinator.swift in Sources */,
 				4076069A289565DF00F4A9EB /* AppDelegate.swift in Sources */,
 				4076069C289565DF00F4A9EB /* SceneDelegate.swift in Sources */,
+				4031B1FE28A03D9400CAC047 /* CustomeDateFormatter.swift in Sources */,
 				40185C0D2895B35F00750D06 /* WeekInfoItemTableViewCell.swift in Sources */,
 				406FD85F289AB94900588EBF /* CityListScreenViewController.swift in Sources */,
 				40185C1F28986D2500750D06 /* HourItemCollectionViewCell.swift in Sources */,
 				406FD8502899732900588EBF /* MapScreenViewController.swift in Sources */,
 				40185C222898768400750D06 /* Constans.swift in Sources */,
-				40185C1A2898057A00750D06 /* Helpers.swift in Sources */,
+				40185C1A2898057A00750D06 /* WeatherImageSetupHelper.swift in Sources */,
 				406FD865289ABA8900588EBF /* CityListViewModel.swift in Sources */,
 				40185C152896B08300750D06 /* WeatherScreenNetworkService.swift in Sources */,
 				407606B128956F7200F4A9EB /* WeatherScreenViewController.swift in Sources */,

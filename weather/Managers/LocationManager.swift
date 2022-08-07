@@ -16,6 +16,7 @@ final class LocationManager: NSObject {
     
     var didGetLocation: ((_ lat: Double, _ lon: Double) -> Void)?
     
+    var showError: ((_ title: String, _ message: String) -> Void)?
     override init() {
         super.init()
         locationManager.delegate = self
@@ -68,6 +69,7 @@ final class LocationManager: NSObject {
 extension LocationManager: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        showError?("Location error", "Can not get your location")
         print("Error is ", error)
     }
     

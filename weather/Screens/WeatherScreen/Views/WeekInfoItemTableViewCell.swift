@@ -16,7 +16,7 @@ final class WeekInfoItemTableViewCell: UITableViewCell {
                maxTemp: Int,
                minTemp: Int,
                weatherIconName: String) {
-        dayLabel.text = Helpers.dateFormatter(time: day, format: "E")
+        dayLabel.text = CustomeDateFormatter().convertDate(time: day, format: "E")
         tempLabel.text = maxTemp.toString() + "°/ " + minTemp.toString() + "°"
         weatherIcon.image = UIImage(named: weatherIconName)
     }

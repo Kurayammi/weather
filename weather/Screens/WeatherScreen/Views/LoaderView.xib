@@ -42,6 +42,7 @@
                 <constraint firstItem="ati-hZ-0aB" firstAttribute="top" secondItem="CkU-IY-zHN" secondAttribute="bottom" constant="10" id="l0H-PT-D08"/>
                 <constraint firstItem="CkU-IY-zHN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="p9h-Ep-x2O"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="139" y="46"/>
         </view>
     </objects>

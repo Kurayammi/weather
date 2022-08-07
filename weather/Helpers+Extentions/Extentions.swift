@@ -34,13 +34,13 @@ extension UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             
             switch action.style{
-                case .default:
+            case .default:
                 print("default")
                 
-                case .cancel:
+            case .cancel:
                 print("cancel")
                 
-                case .destructive:
+            case .destructive:
                 print("destructive")
                 
             @unknown default:
