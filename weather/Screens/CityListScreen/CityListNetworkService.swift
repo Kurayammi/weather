@@ -9,7 +9,6 @@ import Foundation
 import CoreLocation
 
 final class CityListNetworkService {
-    
     private let networkManager = NetworkManager()
     var didGetResponce: ((_ responce: GetCityResponceModel) -> Void)?
     

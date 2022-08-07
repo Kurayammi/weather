@@ -8,22 +8,6 @@
 import Foundation
 import CoreLocation
 
-struct GetLocation: Codable {
-    let lat: Double
-    let long: Double
-}
-struct Place: Codable {
-    let name: String
-}
-struct GetCity: Codable {
-    let loc: GetLocation
-    let place: Place
-}
-
-struct GetCityResponceModel: Codable {
-    let response: [GetCity]
-}
-
 final class MapScreenNetworkService {
     
     private let networkManager = NetworkManager()

@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdy-Ld-7Sp" userLabel="DayLabel">
-                        <rect key="frame" x="10" y="39.5" width="41.5" height="21"/>
+                        <rect key="frame" x="20" y="39.5" width="41.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="OAm-1C-L1K" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mjT-Yz-Ghj" secondAttribute="trailing" constant="5" id="Dt2-9m-jt5"/>
-                    <constraint firstItem="cdy-Ld-7Sp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="I3V-on-kah"/>
+                    <constraint firstItem="cdy-Ld-7Sp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="I3V-on-kah"/>
                     <constraint firstItem="mjT-Yz-Ghj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cdy-Ld-7Sp" secondAttribute="trailing" constant="5" id="Ic7-Hx-9yG"/>
                     <constraint firstItem="OAm-1C-L1K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="KSU-bR-zw8"/>
                     <constraint firstItem="mjT-Yz-Ghj" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="N1z-m3-ZjR"/>

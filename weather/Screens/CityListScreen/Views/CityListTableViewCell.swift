@@ -11,7 +11,7 @@ class CityListTableViewCell: UITableViewCell {
 
     @IBOutlet private var titleLable: UILabel!
     
-    func setup(cityName: String) {
-        titleLable.text = cityName
+    func setup(cityName: String, countryName: String) {
+        titleLable.text = cityName + ", " + countryName
     }
 }

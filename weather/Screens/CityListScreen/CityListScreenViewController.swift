@@ -40,6 +40,7 @@ final class CityListScreenViewController: UIViewController {
         self.viewModel.currentCityName = currentCityName
     }
     
+    //MARK: Setup UI
     private func setupUI() {
         cityListTableView.delegate = self
         cityListTableView.dataSource = self
@@ -81,8 +82,9 @@ extension CityListScreenViewController: UITableViewDelegate, UITableViewDataSour
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CityListTableViewCell") as? CityListTableViewCell {
             guard let name = viewModel.searchedCities?.response[indexPath.row].place.name else { return UITableViewCell() }
+            guard let countryName = viewModel.searchedCities?.response[indexPath.row].place.countryFull else { return UITableViewCell() }
             
-            cell.setup(cityName: name)
+            cell.setup(cityName: name, countryName: countryName)
             return cell
         }
         

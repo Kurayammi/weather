@@ -32,7 +32,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXe-br-nG4" userLabel="LeftButton">
-                            <rect key="frame" x="2" y="0.0" width="40" height="40"/>
+                            <rect key="frame" x="10" y="0.0" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="j8l-Um-snl"/>
                             </constraints>
@@ -44,7 +44,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yh-fx-wLT" userLabel="Title">
-                            <rect key="frame" x="52" y="0.0" width="45" height="40"/>
+                            <rect key="frame" x="60" y="0.0" width="41.5" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" name="white"/>
                             <nil key="highlightedColor"/>
@@ -70,7 +70,7 @@
                         <constraint firstAttribute="trailing" secondItem="jMj-X2-AUQ" secondAttribute="trailing" constant="10" id="PfY-YM-Fh6"/>
                         <constraint firstItem="jMj-X2-AUQ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="4yh-fx-wLT" secondAttribute="trailing" constant="267" id="QeA-8j-rbe"/>
                         <constraint firstItem="jMj-X2-AUQ" firstAttribute="top" secondItem="C9g-J2-LHx" secondAttribute="top" id="QfM-Gn-xBU"/>
-                        <constraint firstItem="oXe-br-nG4" firstAttribute="leading" secondItem="C9g-J2-LHx" secondAttribute="leading" constant="2" id="SoV-BH-nIA"/>
+                        <constraint firstItem="oXe-br-nG4" firstAttribute="leading" secondItem="C9g-J2-LHx" secondAttribute="leading" constant="10" id="SoV-BH-nIA"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="U5J-fc-Dm9"/>
                         <constraint firstItem="4yh-fx-wLT" firstAttribute="leading" secondItem="oXe-br-nG4" secondAttribute="trailing" constant="10" id="Xo8-NX-j47"/>
                         <constraint firstAttribute="bottom" secondItem="oXe-br-nG4" secondAttribute="bottom" id="YTd-xo-TYk"/>
@@ -79,7 +79,7 @@
                         <constraint firstItem="oXe-br-nG4" firstAttribute="top" secondItem="C9g-J2-LHx" secondAttribute="top" id="xba-8K-Oy2"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hT-m8-AGm">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hT-m8-AGm">
                     <rect key="frame" x="0.0" y="84" width="414" height="812"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqR-kK-Ikc" userLabel="ContainerView">
@@ -89,7 +89,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPd-vQ-Mgy" userLabel="Title">
-                                            <rect key="frame" x="10" y="5" width="394" height="21"/>
+                                            <rect key="frame" x="25" y="5" width="379" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="white"/>
                                             <nil key="highlightedColor"/>
@@ -219,7 +219,7 @@
                                         <constraint firstAttribute="trailing" secondItem="VPd-vQ-Mgy" secondAttribute="trailing" constant="10" id="OBt-xz-Ahn"/>
                                         <constraint firstItem="nMM-MS-so6" firstAttribute="leading" secondItem="4I8-ju-Tyl" secondAttribute="leading" constant="50" id="P8e-P0-8VS"/>
                                         <constraint firstItem="JUd-7R-6Af" firstAttribute="centerY" secondItem="4I8-ju-Tyl" secondAttribute="centerY" id="YTp-Ve-SK6"/>
-                                        <constraint firstItem="VPd-vQ-Mgy" firstAttribute="leading" secondItem="4I8-ju-Tyl" secondAttribute="leading" constant="10" id="eLU-Kq-DXK"/>
+                                        <constraint firstItem="VPd-vQ-Mgy" firstAttribute="leading" secondItem="4I8-ju-Tyl" secondAttribute="leading" constant="25" id="eLU-Kq-DXK"/>
                                         <constraint firstItem="JUd-7R-6Af" firstAttribute="leading" secondItem="nMM-MS-so6" secondAttribute="trailing" constant="20" id="nWh-rc-Kjf"/>
                                         <constraint firstAttribute="height" constant="250" id="z8W-Ae-qfh"/>
                                     </constraints>
@@ -235,7 +235,7 @@
                                         <size key="itemSize" width="50" height="150"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="sectionInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gKZ-8I-SFh" userLabel="WeekInfoTableView">

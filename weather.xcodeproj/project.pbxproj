@@ -18,6 +18,8 @@
 		40185C2028986D2500750D06 /* HourItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40185C1E28986D2500750D06 /* HourItemCollectionViewCell.xib */; };
 		40185C222898768400750D06 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40185C212898768400750D06 /* Constans.swift */; };
 		4031B1FE28A03D9400CAC047 /* CustomeDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4031B1FD28A03D9400CAC047 /* CustomeDateFormatter.swift */; };
+		4031B20128A0478200CAC047 /* CityResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4031B20028A0478200CAC047 /* CityResponceModel.swift */; };
+		4031B20328A047B600CAC047 /* WeatherResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4031B20228A047B600CAC047 /* WeatherResponceModel.swift */; };
 		40623B3D289FEA930036A104 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40623B3C289FEA930036A104 /* Extentions.swift */; };
 		406FD8502899732900588EBF /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406FD84E2899732900588EBF /* MapScreenViewController.swift */; };
 		406FD8512899732900588EBF /* MapScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 406FD84F2899732900588EBF /* MapScreenViewController.xib */; };
@@ -52,6 +54,8 @@
 		40185C1E28986D2500750D06 /* HourItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		40185C212898768400750D06 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		4031B1FD28A03D9400CAC047 /* CustomeDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeDateFormatter.swift; sourceTree = "<group>"; };
+		4031B20028A0478200CAC047 /* CityResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityResponceModel.swift; sourceTree = "<group>"; };
+		4031B20228A047B600CAC047 /* WeatherResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponceModel.swift; sourceTree = "<group>"; };
 		40623B3C289FEA930036A104 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		406FD84E2899732900588EBF /* MapScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
 		406FD84F2899732900588EBF /* MapScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapScreenViewController.xib; sourceTree = "<group>"; };
@@ -107,6 +111,15 @@
 			path = "Helpers+Extentions";
 			sourceTree = "<group>";
 		};
+		4031B1FF28A0475D00CAC047 /* ResponceModels */ = {
+			isa = PBXGroup;
+			children = (
+				4031B20028A0478200CAC047 /* CityResponceModel.swift */,
+				4031B20228A047B600CAC047 /* WeatherResponceModel.swift */,
+			);
+			path = ResponceModels;
+			sourceTree = "<group>";
+		};
 		406FD84D289972FF00588EBF /* MapScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +146,7 @@
 		406FD861289ABA4100588EBF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4031B1FF28A0475D00CAC047 /* ResponceModels */,
 				407606A2289565E500F4A9EB /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -330,8 +344,10 @@
 				40185C132896B01D00750D06 /* WeatherScreenViewModel.swift in Sources */,
 				406FD8532899750600588EBF /* MapScreenVIewModel.swift in Sources */,
 				406FD86B289AC2AA00588EBF /* CityListTableViewCell.swift in Sources */,
+				4031B20128A0478200CAC047 /* CityResponceModel.swift in Sources */,
 				40C34474289BCC4C005D6DD3 /* LoaderView.swift in Sources */,
 				406FD85728999DE800588EBF /* MapScreenNetworkService.swift in Sources */,
+				4031B20328A047B600CAC047 /* WeatherResponceModel.swift in Sources */,
 				40185C172897EB1300750D06 /* LocationManager.swift in Sources */,
 				40623B3D289FEA930036A104 /* Extentions.swift in Sources */,
 			);

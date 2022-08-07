@@ -41,6 +41,7 @@ class MapScreenViewController: UIViewController {
         self.coordinator = coordinator
     }
     
+    //MARK: Setup UI
     private func setupUI() {
         setupMap()
         setupTextField()
