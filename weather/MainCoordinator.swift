@@ -7,11 +7,11 @@
 
 import UIKit
 import CoreLocation
+
 final class MainCoordinator {
     private(set) var window: UIWindow
     private var navigationController: UINavigationController?
     
-    private let locationManager = LocationManager()
     private var weatherScreenVC: WeatherScreenViewController?
     
     func start() {
