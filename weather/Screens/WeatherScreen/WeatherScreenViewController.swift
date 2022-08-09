@@ -25,11 +25,14 @@ final class WeatherScreenViewController: UIViewController {
     
     //MARK: @IBAction
     @IBAction func mapButtonAction(_ sender: Any) {
-        coordinator?.pushMapScreen(currentLocation: viewModel.didEnd())
+        coordinator?.pushMapScreen(
+            currentLocation: viewModel.currentLocation,
+            currentCityName: viewModel.currentCityName)
     }
     @IBAction func cityListButtonAction(_ sender: Any) {
-        coordinator?.pushCityListScreen(location: viewModel.didEnd(),
-                                        currentCityName: viewModel.currentCityName)
+        coordinator?.pushCityListScreen(
+            location: viewModel.currentLocation,
+            currentCityName: viewModel.currentCityName)
     }
     
     private let viewModel = WeatherScreenViewModel()
@@ -77,7 +80,7 @@ final class WeatherScreenViewController: UIViewController {
                                   y: 0,
                                   width: width,
                                   height: height)
-         
+        
         self.view.addSubview(loaderView)
     }
     
@@ -105,7 +108,7 @@ final class WeatherScreenViewController: UIViewController {
         weekInfoTableView.dataSource = self
         weekInfoTableView.register(UINib(nibName: "WeekInfoItemTableViewCell", bundle: nil), forCellReuseIdentifier: "WeekInfoItemTableViewCell")
         
-       
+        
         weekInfoTableView.reloadData()
     }
     

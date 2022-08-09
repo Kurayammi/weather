@@ -42,9 +42,6 @@ final class WeatherScreenViewModel {
                 lon: currentLocation.longitude)
         }
     }
-    func didEnd() -> CLLocationCoordinate2D? {
-        return locationManager.location
-    }
     
     func onDayTap(index: Int) {
         guard let lat = locationManager.location?.latitude else {return}

@@ -26,10 +26,12 @@ final class MainCoordinator {
         window.makeKeyAndVisible()
     }
     
-    func pushMapScreen(currentLocation: CLLocationCoordinate2D?) {
-        let model = MapScreenVIewModel(currentLocation: currentLocation)
+    func pushMapScreen(currentLocation: CLLocationCoordinate2D?,
+                       currentCityName: String?) {
         let vc = MapScreenViewController()
-        vc.start(viewModel: model,coordinator: self)
+        vc.start(coordinator: self,
+                 currentLocation: currentLocation,
+                 currentCityName: currentCityName)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

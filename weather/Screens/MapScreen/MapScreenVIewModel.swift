@@ -13,6 +13,7 @@ final class MapScreenVIewModel {
     
     var updateUI: (() -> Void)?
     var currentLocation: CLLocationCoordinate2D?
+    var currentCityName: String?
     var inputText: String?
     
     var showAlert: ((_ title: String, _ message: String) -> Void)?
@@ -26,12 +27,9 @@ final class MapScreenVIewModel {
     func setupCallBacks() {
         networkService.didGetResponce = { location in
             self.currentLocation = location
+            self.currentCityName = self.inputText
             self.updateUI?()
         }
         networkService.showError = showAlert
-    }
-    
-    init(currentLocation: CLLocationCoordinate2D?) {
-        self.currentLocation = currentLocation
     }
 }

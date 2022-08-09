@@ -7,6 +7,9 @@
 
 import UIKit
 import MapKit
+private struct MapConstants {
+    static let mapZoom = CLLocationDistance(exactly: 5000)!
+}
 
 class MapScreenViewController: UIViewController {
     //MARK: IBOutlet
@@ -16,15 +19,15 @@ class MapScreenViewController: UIViewController {
     //MARK: @IBAction
     @IBAction func backButtonAction(_ sender: Any) {
         coordinator?.pushWeatherScreen(
-            location: viewModel?.currentLocation,
-            currentCityName: viewModel?.inputText)
+            location: viewModel.currentLocation,
+            currentCityName: viewModel.currentCityName)
     }
     
     @IBAction func searchButtonAction(_ sender: Any) {
-        viewModel?.onSearchButtonTapped()
+        viewModel.onSearchButtonTapped()
     }
     
-    private var viewModel: MapScreenVIewModel?
+    private let viewModel = MapScreenVIewModel()
     private weak var coordinator: MainCoordinator?
    
     //MARK: Lifecycle
@@ -32,13 +35,15 @@ class MapScreenViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupCallBacks()
-        viewModel?.setupCallBacks()
+        viewModel.setupCallBacks()
     }
     
-    func start(viewModel: MapScreenVIewModel,
-               coordinator: MainCoordinator) {
-        self.viewModel = viewModel
+    func start(coordinator: MainCoordinator,
+               currentLocation: CLLocationCoordinate2D?,
+               currentCityName: String?) {
         self.coordinator = coordinator
+        viewModel.currentLocation = currentLocation
+        viewModel.currentCityName = currentCityName
     }
     
     //MARK: Setup UI
@@ -48,9 +53,12 @@ class MapScreenViewController: UIViewController {
     }
     
     private func setupMap() {
-        if let location = viewModel?.currentLocation {
+        if let location = viewModel.currentLocation {
             
-            let region = MKCoordinateRegion( center: location, latitudinalMeters: CLLocationDistance(exactly: 10000)!, longitudinalMeters: CLLocationDistance(exactly: 10000)!)
+            let region = MKCoordinateRegion(
+                center: location,
+                latitudinalMeters: MapConstants.mapZoom,
+                longitudinalMeters: MapConstants.mapZoom)
             mapView.setRegion(mapView.regionThatFits(region), animated: true)
         }
     }
@@ -62,13 +70,13 @@ class MapScreenViewController: UIViewController {
     }
     
     private func setupCallBacks() {
-        viewModel?.updateUI = {
+        viewModel.updateUI = {
             DispatchQueue.main.async {
                 self.setupMap()
             }
         }
         
-        viewModel?.showAlert = {title, message in
+        viewModel.showAlert = {title, message in
             DispatchQueue.main.async {
                 self.showAlertFor(title: title, message: message)
             }
@@ -83,6 +91,6 @@ extension MapScreenViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        viewModel?.inputText = textField.text
+        viewModel.inputText = textField.text
     }
 }
